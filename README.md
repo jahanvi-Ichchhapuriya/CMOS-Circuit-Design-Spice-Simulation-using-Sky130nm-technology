@@ -408,10 +408,12 @@ We have seen the curve for Id vs Vds, for different values of Vgs.</br>
 
 <img width="1297" height="658" alt="image" src="https://github.com/user-attachments/assets/c10158ab-7588-4862-96a0-19125d4a3e25" />
 
-In the above graph the area left of curve; Vds=Vgs-Vt is Linear region as current is increasing linearly, the area right is Saturation region with slight increase in current due to velocity saturation and below is the Cut off region.Also this case is when the channel length is large.</br>
+**Graph Regions (Long Channel):**
 
-Now we are taking different W and L, but the ration of W/L is same as previous, so the Id should not change. But this is not the case practically.</br>
-Below is the spice deck, where only the values of W and L is changed, rest everything remains same.</br>
+- Left of Vds = Vgs-Vt → Linear region</br>
+- Right of Vds = Vgs-Vt → Saturation region (slight slope due to velocity saturation)</br>
+- Below → Cut-off region</br>
+**Key Point:** If W/L ratio is same, Id should be same in theory. But in practice, it changes due to short-channel effects.</br>
 
 <img width="872" height="442" alt="image" src="https://github.com/user-attachments/assets/09eec98c-92a0-409e-a6c5-5b2a18e8289d" />
 
@@ -443,9 +445,12 @@ For short channel we will see more of a linear behaviour as the Vgs increases. T
 <img width="1332" height="592" alt="image" src="https://github.com/user-attachments/assets/95aa490e-3dc0-4875-b74a-836c1ae07486" />
 So, for lower node we will have 4 regions of operations: **Cut Off, Linear, Saturation and Velocity Saturation**
 
-**Velocity Saturation**
-We know velocity and electric field are related to each other with equation `v=uE`, where v is velocity, E is electric field and u is mobility. Velocity increases linearly with electric field over certain electric field value after which it gets saturated. This is due to scattering at higher fields and mobility decreases. </br>
+**Velocity Saturation:**
 
+- **v = μE** (velocity = mobility × electric field)
+- At low E → v increases linearly
+- At high E → v saturates (stops increasing)
+- Reason: Scattering at high fields → mobility decreases
 
 ![WhatsApp Image 2026-02-27 at 2 52 16 PM](https://github.com/user-attachments/assets/0638d759-085a-4f20-b3c8-954263d7c095)
 
@@ -456,8 +461,21 @@ Velocity saturation happens for higher gate-source voltages.</br>
 ### L4 Velocity saturation drain current model
 <img width="987" height="473" alt="image" src="https://github.com/user-attachments/assets/cbe1cdbb-8b18-4c19-97c6-be3e4244fb34" />
 
-Let us take Vgs-Vt=Vgt because we will be taking Vgs as large values. Current equation we will be using as shown above, For lower values of Vds we will neglect the 'lambda' term.</br>
-There is one more technology paramter which is "Vdsat", it is the velocity of gate when the device just enters the Velocity saturation region.</br>
+**Step 1: Define Overdrive Voltage**
+- Let **Vgt = Vgs - Vt**
+- We use this because we are analyzing large Vgs values
+- Vgt represents how much the gate voltage exceeds threshold
+
+**Step 2: Simplify the Current Equation**
+- The full current equation includes a λ (lambda) term for channel length modulation
+- For small Vds values, we can neglect this term
+- This makes our analysis simpler without losing much accuracy
+
+**Step 3: Understand Vdsat**
+- **Vdsat** is another important technology parameter
+- It is the drain voltage at which velocity saturation begins
+- When Vds reaches Vdsat, the device enters the velocity saturation region
+- Beyond this point, increasing Vds does not increase current significantly</br>
 <img width="831" height="212" alt="image" src="https://github.com/user-attachments/assets/2e70d7d1-4891-4488-90e8-93f9b5f1322c" />
 
 <img width="1026" height="536" alt="image" src="https://github.com/user-attachments/assets/724c8f7e-e772-4006-9f39-05d7a8e06b56" />
@@ -486,7 +504,12 @@ We can see above, simulation is being done for L=0.15u and W=0.39u.</br>
 
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/3455d86b-dd2b-4b41-aad6-4bee2f683440" />
 
-The above plot is Id vs Vds for different values of Vgs. We can see for lower values of Vgs it is showing quadratic behaviour and for higher values of Vgs it is showing Linear behaviour. Now if want to see the peak current for Vgs=1.8V, just 'press' left click on mouse at Vgs=1.8V.</br>
+**Id vs Vds Plot Observations:**
+
+- Low Vgs → Quadratic curve</br>
+- High Vgs → Linear curve (velocity saturation)</br>
+
+**To get peak current at Vgs = 1.8V:** Left-click on the Vgs = 1.8V curve.</br>
 
 <img width="290" height="22" alt="image" src="https://github.com/user-attachments/assets/83d91519-32f9-4d17-b88a-379635529e9a" />
 So we can see it is approximately 198uA.</br>
@@ -605,7 +628,13 @@ So the  range of Vin and Vout is 0V-2V.</br>
 ## Voltage transfer characteristics-SPICE simulations
 
 ### L1 SPICE deck creation for CMOS inverter
-We will now simulate the VTC. For that we need to **create the SPICE deck**. It is a connectivity information (Netlist). As there is information about substrate, the circuit is as shown below.Here M1 is PMOS and M2 is NMOS</br>
+**Simulating VTC – Creating SPICE Deck:**
+
+- SPICE deck = Netlist = tells how components are connected</br>
+- Circuit has:</br>
+  - M1 = PMOS</br>
+  - M2 = NMOS</br>
+- Include substrate connections in netlist</br>
 
 <img width="546" height="501" alt="image" src="https://github.com/user-attachments/assets/87648d3d-9f23-4e6a-b66a-872306e570f1" />
 
@@ -635,10 +664,10 @@ We know for Mosfet the syntax is DGSS(Drain gate source and substrate).
 <img width="1192" height="553" alt="image" src="https://github.com/user-attachments/assets/a06f6d8e-c074-4aa9-9946-6056ed71f927" />
 <img width="1280" height="592" alt="image" src="https://github.com/user-attachments/assets/f4e7acd7-6158-432b-8003-b2c74656f9b0" />
 
-Next comes the **Simulation Commands**</br>
-Here we will be sweeping the gate input voltage from 0 to 2.5V with steps of 0.05. We need to find the VTC, for this only we will be sweeping the input voltage and measuring the output voltage.</br>
-Final step is to describe the **Model files**, all the information about the technological parameteres is given inside the model files.</br>
+**Simulation Steps:**
 
+1. **Simulation Command:** Sweep Vin 0 to 2.5V (step 0.05V) → measure Vout → get VTC</br>
+2. **Model Files:** Include technology files (contains all transistor parameters)</br>
 <img width="1223" height="565" alt="image" src="https://github.com/user-attachments/assets/1bd6f151-618b-4612-82fd-6b43f7eec459" />
 
 Now we will do the SPICE simulation for Wn=Wp=0.375u, Ln=Lp=0.25u, Wn/ln=Wp/Lp=1.5. Below is the VTC we get for the above netlist.</br>
@@ -723,9 +752,13 @@ Expanding Kp and Kn (Gain factor) </br>
 <img width="517" height="92" alt="image" src="https://github.com/user-attachments/assets/950f6372-d1d7-4c18-8cfd-5b1f35cdfce5" />
 <img width="517" height="92" alt="image" src="https://github.com/user-attachments/assets/a532b030-2296-4ff8-981d-2ab29cd88dea" />
 
-Now here on the RHS all are constants and we will get the values from the model files except Vm, If we know Vm then we can get the W/L ratios.</br>
-So now this will allow us to find out for what value of W/L ratio of PMOS will be greater than NMOS based on values of Vm.</br>
-We will now see the behaviour of CMOS for below difference in W/L ratios of PMOS and NMOS.</br>
+**Finding W/L ratios from Vm:**
+
+- RHS has constants (from model files) and Vm</br>
+- If we know Vm → we can find W/L ratios</br>
+- This tells us when PMOS W/L > NMOS W/L</br>
+
+Now we will see CMOS behavior for different W/L ratios.</br>
 
 <img width="301" height="233" alt="image" src="https://github.com/user-attachments/assets/8534791b-2793-4986-bdad-4a2ef6bde1fe" />
 
@@ -755,11 +788,12 @@ The final data set we got from above experiment is shown below:
 
 <img width="692" height="236" alt="image" src="https://github.com/user-attachments/assets/0359ac26-996d-423d-bd27-99e08b6dddaa" />
 
-There are some conclusions we draw from this experiment: </br>
-* During fabrication, there can be slight variation in sizes of PMOS and NMOS from the required one, but the robustness of CMOS inverter is such that, there is not much difference in the Vm with change in sizes.
-* When (W/L)p = 2(W/L)n, we see that RISE-FALL delay are approximately equal, if we simulate then we can get the ratio factor such that the Rise delay and fall delay are equal to each other. This shows "Symmetry" of CMOS inverter.
-  
+**Experiment Conclusions:**
+
+1. **Robustness:** Even if transistor sizes vary during fabrication, Vm does not change much → CMOS is robust.</br>
+2. **Symmetry:** When (W/L)p = 2 × (W/L)n, rise delay ≈ fall delay. This shows CMOS inverter symmetry.</br>
   *This is a typical characteristic of Clock Inverter/buffer where we want the rise delay and fall delay to be equal.* </br>
+  
   <img width="1110" height="653" alt="image" src="https://github.com/user-attachments/assets/30d33241-5e2f-4389-9a80-cd8d2ad5baaf" />
 * Other types of cells can be used according to the data path requirement
 
@@ -767,9 +801,10 @@ There are some conclusions we draw from this experiment: </br>
 
 ## Static behaviour evaluation-CMOS inverter robustness-Noise Margin
 
-### L1 Introduction to Noise Margin
-Now we will learn CMOS inverter's robustness towards the Noise Margin. Also we see the Noise margin evaluation for CMOS inverter. </br>
-**Noise Margin**: It is a measure of how much unwanted electrical noise a logic circuit can tolerate on its input without producing an incorrect output. </br>
+### L1 Introduction to Noise Margin</br>
+We now examine the CMOS inverter's robustness through the lens of **Noise Margin**—a key metric for assessing noise immunity.</br>
+
+**Noise Margin** quantifies the maximum tolerable input voltage deviation that a logic gate can withstand while still maintaining correct output logic levels. It essentially measures the circuit's resilience against electrical disturbances.</br>
 
 For example if we consider an ideal Inverter, for inputs 0/1 it gives output as 1/0. The slope of switch is infinite. </br>
 
@@ -779,14 +814,23 @@ But practically the slope won't be infinite, due to presence of resistances and 
 
 <img width="368" height="316" alt="image" src="https://github.com/user-attachments/assets/f8f2f3f3-dc21-45eb-90b7-c9f2fdb8ef94" />
 
-We will now see that whenever the input is between 0 to VIL(input low voltage); the output will be VOH(output high). </br>
-And whenever the input is between VIH(input high voltage) and Vdd; output will be VOL(output low voltage). </br>
+We can observe the following from the VTC curve:</br>
+
+- When the input voltage is between **0 and VIL** (input low voltage), the output stays at **VOH** (output high voltage).</br>
+- When the input voltage is between **VIH** (input high voltage) and **Vdd**, the output stays at **VOL** (output low voltage).</br>
 <img width="405" height="342" alt="image" src="https://github.com/user-attachments/assets/8e3c22bf-b012-4a75-a08d-910511ed2980" />
 
-### L2 Noise Margin voltage paramters
-Considering the more practical scenarios and non idealities of an inverter, the curve we get is as shown below. So here the when the 0<Vin<VIL --> output is VOH<Vout<Vdd ; and when the input is VOL<Vin<Vdd --> output is 0<Vout<VOL. Also **VOL<VOH<Vdd** as VOH will be output high for the next inverter which will be connected and **0<VOL<VIL** as it will be the output low for the next inverter. </br>
+### L2 Noise Margin voltage paramters</br>
+**Practical inverter VTC (with non-idealities):**</br>
 
-Also, the slope is approximately -1, as for increase in input, output is reducing. </br>
+- 0 < Vin < VIL   →   VOH < Vout < Vdd</br>
+- VOL < Vin < Vdd →   0 < Vout < VOL</br>
+
+**Relationships:**</br>
+- VOL < VOH < Vdd</br>
+- 0 < VOL < VIL</br>
+
+Slope ≈ -1 in transition region (output drops as input rises) </br>
 
 <img width="356" height="337" alt="image" src="https://github.com/user-attachments/assets/d848d4c0-de9b-4b6b-8c6a-f3006bae557c" />
 
@@ -805,8 +849,14 @@ So, any value which lies in between noise margins is considered either 1/0 and c
 <img width="822" height="481" alt="image" src="https://github.com/user-attachments/assets/6443e129-644a-4d0d-a4c4-0439ba4165de" />
 
 ### L4 Noise margin variation with respect to PMOS width
-We will evaluate the noise margin depending upon the PMOS width and ultimately prove that how CMOS inverter is robust to the noise margins.</br>
-First, we will find the points where the slope = -1 and extend the lines towards x-y axis.</br>
+**Finding Noise Margins:**</br>
+
+1. Find points where slope = -1 on VTC curve</br>
+2. Extend lines to x-axis and y-axis</br>
+3. Get VIL, VIH, VOL, VOH from these points</br>
+4. Calculate noise margins = VOH - VIH and VIL - VOL</br>
+
+We will do this for different PMOS widths to prove CMOS robustness.</br>
 
 <img width="1207" height="542" alt="image" src="https://github.com/user-attachments/assets/5ab8cb26-4ab7-4e77-9a04-be82cfcdac12" />
 The larger the Noise margin, stronger is CMOS inverter and immune to Noises.</br>
@@ -848,7 +898,10 @@ We will take the point where the slope is -1 ; x axis will give VIL and VIH, whe
 ## Static behaviour evaluation-CMOS inverter robustness-Power supply variation
 
 ### L1 Smart SPICE simulations for power supply variations
-While evaluating the robustness of CMOS inverter another factor is **Power Supply Scaling**. On reducing the gate length, the operating power is also reduced. On power scaling the Cmos characteristics should not change.</br>
+**Power Supply Scaling** is another factor in CMOS robustness.</br>
+
+- Smaller gate length → Lower operating power</br>
+- Even with power scaling, CMOS characteristics should stay the same</br>
 
 We will check by simulation, taking two cases.
 
@@ -861,10 +914,14 @@ We will now plot the VTC charactersitics for Vdd= 2.5V, 2V, 1.5V, 1V, 0.5V;
 
 <img width="742" height="568" alt="image" src="https://github.com/user-attachments/assets/87cf496c-6386-4374-9e92-1a6ef71959c1" />
 
-### L2 Advantages and disadvantages using low supply voltage
-We will now analyse the curves we got in after the simulation and see what are the advantages and disadvantages using low supply voltage.</br>
-The first factor is to check the "Gain" for all the supply voltages. "Gain Factor" is change in the output voltage divided by change in the input voltage.
+### L2 Advantages and disadvantages using low supply voltage</br>
+**Analyzing simulation results for different Vdd values:** </br>
 
+First, we check the **gain** for each supply voltage.</br>
+
+Gain = ΔVout / ΔVin  (how much output changes for a given input change)</br>
+
+This tells us how sharp the switching transition is.
 <img width="968" height="516" alt="image" src="https://github.com/user-attachments/assets/dd11da87-d570-4fe1-9439-bd449e39af6a" />
 
 <img width="976" height="547" alt="image" src="https://github.com/user-attachments/assets/102b9c1b-82ce-4d72-bc7e-fb502591c636" />
@@ -878,9 +935,11 @@ There is energy lowering for low supply voltage.
   
 <img width="722" height="212" alt="image" src="https://github.com/user-attachments/assets/ab3ef568-d3f7-44cb-a6c5-6524ba5b72ec" />
 
-* Disadvantages of low supply voltage
-  Due to low supply voltage, the charging and discharging of load capacitor becomes very slow, due to this the Both rise delay and fall delay will increase and lead to a performance impact.
+* **Disadvantages of using low supply voltage:**
 
+- **Slower switching**: The load capacitor takes more time to charge and discharge
+- **Increased delays**: Both rise delay and fall delay become larger
+- **Performance impact**: The circuit operates at a lower maximum frequency
 ### L3 Sky130 Supply variation Labs
 We will calculate the supply variation.
 
@@ -905,9 +964,9 @@ We will calculte the Gain: </br>
   |Gain| = 9.3844 </br>
 
 ## Static behaviour evaluation-CMOS inverter robustness-Device variation
-
-### L1 Sources of variation - Etching process
 We will see the sources of variation of VTC characteristics in a CMOS inverter.</br>
+### L1 Sources of variation - Etching process
+
 First is **Etching Process** </br>
 If we see a single inverter layout, we will see the length of gate, the width(common area between polysilicon and diffusion). Due to etching process there can be a variation in length and width of CMOS.
 
@@ -927,7 +986,6 @@ Therefore the variation in L and W can change the drain current of CMOS inverter
 <img width="926" height="483" alt="Screenshot 2025-10-03 203633" src="https://github.com/user-attachments/assets/b1c7130a-de89-4cf1-ab2e-064702878082" />
 
 ### L2 Sources of variation - Oxide thickness
-Another source of variation is **Oxide Thickness*</br>
 Let us consider the cross-sectional view of CMOS inverter. We will see the oxide under polysilicon gate, while fabricating the thickness can vary.</br>
 
 <img width="1318" height="561" alt="Screenshot 2025-10-03 203747" src="https://github.com/user-attachments/assets/25b705ca-1d73-4127-a9bc-a69e2af0c8c2" />
@@ -942,8 +1000,12 @@ We know **Cox=Eox/tox**, therefore change in tox can actually change the drain c
 <img width="1162" height="461" alt="Screenshot 2025-10-03 204044" src="https://github.com/user-attachments/assets/d06ee6da-3467-41cb-8a0e-280b15faae56" />
 
 ### L3 Smart SPICE simulation for device variations
-Now we will be doing the SPICE simulation for device variations, and prove the robustness of CMOS inverter inspite of different extreme conditions.</br>
-We will see the characteristics for Strong PMOS and week NMOS, this means PMOS width is wider and it has least resistance. Also for weak PMOS and strong PMOS, that means the width of NMOS is more than PMOS and it has least resitance.</br>
+To prove the CMOS inverter's robustness, we will simulate two extreme cases using SPICE:
+
+- **Strong PMOS + Weak NMOS**: PMOS width is larger → lower resistance → stronger PMOS
+- **Strong NMOS + Weak PMOS**: NMOS width is larger → lower resistance → stronger NMOS
+
+The inverter's performance under these conditions will demonstrate its reliability.</br>
 
 <img width="1148" height="339" alt="Screenshot 2025-10-03 224857" src="https://github.com/user-attachments/assets/398d01a6-ffc4-4a10-86a8-3907d3214b69" />
 <img width="594" height="436" alt="Screenshot 2025-10-03 224935" src="https://github.com/user-attachments/assets/41b1f2f6-c4ba-4c71-a8e6-d1fc8e3b4844" />
@@ -951,19 +1013,13 @@ We will see the characteristics for Strong PMOS and week NMOS, this means PMOS w
 <img width="895" height="694" alt="image" src="https://github.com/user-attachments/assets/73b6f593-69c9-4e9f-82ff-a56e4c25e6d0" />
 <img width="753" height="567" alt="Screenshot 2025-10-03 225153" src="https://github.com/user-attachments/assets/33e8fc0e-5220-4dc4-8da9-4c8dd5406e02" />
 
-### L4 Conclusion
-We will draw some conclusions from the characteristics we got.
-
+### L4 Conclusion from the characteristics we got
 <img width="994" height="537" alt="Screenshot 2025-10-03 231012" src="https://github.com/user-attachments/assets/aec473f9-00f5-4028-b122-fa2922affcb3" />
 
-* The Switching threshold 'Vm' is shifted right in case of strong PMOS and shifted left in case of Strong NMOS. </br>
+* The switching threshold **Vm** shifts to the right when the PMOS is stronger, and to the left when the NMOS is stronger. </br>
 
-<img width="1006" height="541" alt="Screenshot 2025-10-03 231027" src="https://github.com/user-attachments/assets/38851b7b-ec82-4400-93d8-c3c651d51ae9" />
-
-* THere not much variation in NOise Margins in both the extreme cases, that means it behaves as a robust inverter in both the cases.</br>
-
-<img width="519" height="169" alt="Screenshot 2025-10-03 231046" src="https://github.com/user-attachments/assets/edd63a58-b8bb-462e-84e5-b8c977d4a4d2" />
-
+<img width="1095" height="661" alt="image" src="https://github.com/user-attachments/assets/7acdec95-de39-4389-937d-1a80e83ac83f" />
+* The noise margins show very little change in both extreme cases, confirming that the inverter remains robust regardless of process variations.</br>
 ### L5 Sky130 device variations labs
 We will now do the SPICE simulations for the device variations</br>
 We can see that the width of PMOS is quite large than that of NMOS. SO it is clearly strong PMOS and weak NMOS case. The Vm will be right shifted.</br>
