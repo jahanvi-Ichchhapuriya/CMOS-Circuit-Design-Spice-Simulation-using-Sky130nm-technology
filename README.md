@@ -87,7 +87,14 @@ SPICE simulations are the bedrock of three critical aspects of digital design:
 Without SPICE, we cannot determine delays. Without delays, the physical design flow operates blindly, and crosstalk analysis becomes meaningless..</br>
 
 Let us say we have done some Clock Tree Synthesis of the circuit shown below with bufffers with different capacitive load at the output.</br>
-
+<img width="386" height="359" alt="image" src="https://github.com/user-attachments/assets/8358dc5f-2b2b-49ae-8d8c-daf22c37fb90" />
+Let us assume C1 = C2 ÷ C3 = C4 = 25fF
+How about creating a buffer tree at node 'A'
+Let us assume Cbuf1 = Cbuf2 = 30fF
+Therefore, total Cap at node 'A' => 60fF
+Therefore, total Cap at node 'B' = 50fF
+om/
+Therefore, total Cap at node 'C' => 50fF
 <img width="1206" height="392" alt="image" src="https://github.com/user-attachments/assets/a0dbe0ed-6981-4966-8d1d-7bf4d223ef61" />
 
 After the SPICE simulation we get a "Delay Table", which includes input slew and output load. The intersection value of Input slew and Output load is considered as Delay. Delay tables for both level 1 and level 2 buffers have been shown. This is calculated by circuit design and simulation</br>
