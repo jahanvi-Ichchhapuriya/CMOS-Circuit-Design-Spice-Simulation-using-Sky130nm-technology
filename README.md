@@ -125,11 +125,10 @@ An NMOS transistor consist of P-type substrate, heavily doped with n+ region. Th
 * B - Body
 
 
-**Threshold Voltage**
+**Threshold Voltage**</br>
 This is a very important term, all the characterisation depends on threshold voltage.</br>
 At first we will keep the Vgs=0, means source and drain terminal both are grounded. Body is also ground. P-substrate and n+ act as PN junction diode and as there is no potential so there is a high resistance. No channel formation is there.</br>
-
-<img width="1322" height="528" alt="image" src="https://github.com/user-attachments/assets/8e2fee4c-8616-4886-859c-d6c08d166541" />
+<img width="499" height="429" alt="image" src="https://github.com/user-attachments/assets/9d3deabe-d57f-4ab8-82ac-be1101c5ff63" />
 
 Now we will apply a positive potential; Vgs>0. We will see gate is now positively charged and due to this there will be Accumulation of negative charges at the surface of substrate.</br>
 
