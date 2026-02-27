@@ -540,23 +540,521 @@ However, **real devices deviate significantly** from this idealized behavior as 
 
 Let's examine a SPICE deck comparing long and short-channel devices while keeping W/L constant:
 
-```spice
-* Comparison of Long vs Short Channel NMOS
-.include 'sky130_fd_pr/models.lib'
+Despite identical W/L ratios, the simulation results will reveal fundamental differences in behavior due to short-channel effects.
 
-* Long-channel device (L = 1.40μm)
-M_long D G 0 0 sky130_fd_pr__nfet_01v8__tt W=13.44u L=1.40u
+L2: Drain Current vs. Gate Voltage for Long and Short Channel Devices
+Comparative Analysis
+When we overlay the characteristics of long and short-channel devices, several important observations emerge:
 
-* Short-channel device (L = 0.15μm)  
-M_short D G 0 0 sky130_fd_pr__nfet_01v8__tt W=1.44u L=0.15u
+[Insert Long vs Short Channel Comparison Image]
 
-* Note: W/L ratio is approximately the same (9.6)
-* Long: 13.44/1.40 = 9.6
-* Short: 1.44/0.15 = 9.6
+Observation 1: Different Vgs Dependencies
 
+For long-channel devices, the drain current shows a quadratic dependence on gate voltage in saturation:
+
+Id(sat) ∝ (Vgs - Vt)²
+
+[Insert Long-Channel Id-Vgs Quadratic Plot Image]
+
+For short-channel devices at the same Vds = 2.5V, the current increases linearly with Vgs due to velocity saturation:
+
+Id(sat) ∝ (Vgs - Vt) (linear dependence)
+
+[Insert Short-Channel Id-Vgs Linear Plot Image]
+
+Understanding the Simulation Syntax
+The SPICE syntax for generating Id vs. Vgs characteristics:
+
+spice
+* Id vs Vgs simulation
+.dc Vgs 0 1.8 0.1 Vds 0.5 2.5 0.5
+This means: "For every value of Vds (0.5V, 1.0V, 1.5V, 2.0V, 2.5V), sweep Vgs from 0 to 1.8V in 0.1V steps."
+
+[Insert Id-Vgs Family Curves Image]
+
+Short-Channel Device Characteristics
+For L = 0.25μm devices, the Id-Vgs relationship reveals the transition from quadratic to linear behavior as Vds increases:
+
+[Insert Short-Channel Id-Vgs Image]
+
+At low Vds, the device still exhibits quadratic behavior. At high Vds, velocity saturation dominates, producing linear Id-Vgs dependence.
+
+L3: Velocity Saturation at Lower and Higher Electric Fields
+The Physics of Velocity Saturation
+In short-channel devices, the lateral electric field (E = Vds/L) becomes extremely high—often exceeding 10⁵ V/cm. Under these conditions, carrier transport deviates from the simple drift model.
+
+Classical drift model:
+v = μE
+
+Where:
+
+v = Carrier velocity
+
+μ = Mobility (constant)
+
+E = Electric field
+
+Reality at high fields:
+Velocity increases linearly with E only up to a critical field (Ec), beyond which it saturates due to:
+
+Optical phonon scattering
+
+Carrier heating effects
+
+Reduced mobility at high fields
+
+[Insert Velocity vs Electric Field Plot Image]
+
+Four Regions of Operation for Short-Channel Devices
+Due to velocity saturation, short-channel MOSFETs exhibit four distinct operating regions:
+
+Region	Condition	Characteristics
+Cut-off	Vgs < Vt	No channel, Id ≈ 0
+Linear	Vds < Vdsat	Normal resistive behavior
+Saturation	Vds ≥ Vdsat	Classical pinch-off
+Velocity Saturation	High Vgs, high Vds	Current limited by carrier velocity
+[Insert Four Regions Diagram Image]
+
+Impact on Device Characteristics
+Velocity saturation becomes increasingly pronounced at higher gate-source voltages:
+
+[Insert Velocity Saturation Effect Image]
+
+Key observations:
+
+At low Vgs, normal quadratic behavior persists
+
+At high Vgs, current is linear with Vgs
+
+Peak current is lower than long-channel predictions
+
+Device enters saturation at lower Vds
+
+L4: Velocity Saturation Drain Current Model
+Modified Current Equations
+Let's define Vgt = Vgs - Vt (gate overdrive voltage). For short-channel devices in saturation, the current equation becomes:
+
+Id(sat) = W · vsat · Cox · (Vgt - Vdsat/2)
+
+Where:
+
+vsat = Saturation velocity (~10⁷ cm/s for silicon)
+
+Vdsat = Saturation voltage at which velocity saturation occurs
+
+[Insert Velocity Saturation Equation Image]
+
+Understanding Vdsat
+The saturation voltage in the presence of velocity saturation is given by:
+
+Vdsat = (Ec · L) · (√(1 + 2Vgt/(Ec · L)) - 1)
+
+For very short channels (L → 0), Vdsat approaches Ec · L.
+
+[Insert Vdsat Derivation Images]
+
+Counterintuitive Scaling Behavior
+Traditional scaling theory predicts that reducing channel length increases current drive:
+
+Id ∝ 1/L
+
+However, velocity saturation fundamentally changes this relationship:
+
+[Insert Current vs Channel Length Plot Image]
+
+Observation 2: Reduced Saturation Current
+
+For deeply scaled nodes, the saturation current is lower than expected rather than higher. This occurs because:
+
+Velocity saturation causes the device to saturate earlier (at lower Vds)
+
+The peak current is limited by vsat, not mobility
+
+Short-channel effects further degrade current drive
+
+[Insert Peak Current Comparison Image]
+
+L5: Sky130 Id-Vgs Simulation Labs
+Setting Up Short-Channel Simulations
+Navigate to the Day 2 design directory:
+
+text
+$ cd sky130CircuitDesignWorkshop/design/day2
+[Insert Day2 Directory Image]
+
+NMOS Id-Vds Simulation for Short Channel
+Create a simulation deck for L = 0.15μm (minimum channel length for Sky130):
+
+spice
+* Sky130 Short-Channel NMOS Id-Vds
+.include '../../models/lib.spice'
+
+* Using minimum channel length device
+M1 D G 0 0 sky130_fd_pr__nfet_01v8__tt W=0.39u L=0.15u
+
+* Bias conditions
 Vgs G 0 DC 1.8V
 Vds D 0 DC 0V
 
-.dc Vds 0 1.8 0.01
-.plot dc I(M_long) I(M_short)
+* Sweep Vds for multiple Vgs values
+.dc Vds 0 1.8 0.01 Vgs 0.2 1.8 0.2
+
+* Output
+.plot dc I(M1)
+.option plotwinsize=0
 .end
+[Insert Simulation Deck Images]
+
+Analyzing Short-Channel Id-Vds Characteristics
+Run the simulation:
+
+text
+$ ngspice nfet_idvd_short.spice
+[Insert Ngspice Run Image]
+
+The resulting plot shows distinct behavior:
+
+[Insert Short-Channel Id-Vds Plot Image]
+
+Key observations:
+
+At low Vgs (0.2V - 0.8V): Curves show quadratic behavior
+
+At high Vgs (1.0V - 1.8V): Curves become linear due to velocity saturation
+
+Extracting Peak Current
+To find the maximum drain current at Vgs = 1.8V:
+
+Left-click on the curve corresponding to Vgs = 1.8V
+
+The cursor displays the current value at any Vds point
+
+Peak current occurs at Vds = 1.8V
+
+[Insert Peak Current Extraction Image]
+
+For W = 0.39μm, L = 0.15μm, the peak current is approximately 198μA.
+
+Id-Vgs Transfer Characteristics
+Now examine Id vs. Vgs with constant Vds:
+
+spice
+* Sky130 Short-Channel Id-Vgs
+.include '../../models/lib.spice'
+
+M1 D G 0 0 sky130_fd_pr__nfet_01v8__tt W=0.39u L=0.15u
+Vds D 0 DC 1.8V
+Vgs G 0 DC 0V
+
+.dc Vgs 0 1.8 0.01
+.plot dc I(M1)
+.end
+[Insert Id-Vgs Simulation Images]
+
+The resulting transfer characteristic reveals:
+
+[Insert Id-Vgs Plot Image]
+
+Subthreshold region (Vgs < 0.5V): Exponential current increase
+
+Quadratic region (0.6V < Vgs < 1.2V): Classical square-law behavior
+
+Linear region (Vgs > 1.2V): Velocity saturation dominates
+
+L6: Sky130 Threshold Voltage (Vt) Extraction
+Determining Threshold Voltage
+The threshold voltage (Vt) is a critical parameter defined as the gate voltage at which significant conduction begins. Several extraction methods exist:
+
+Method 1: Maximum Transconductance Method
+
+Plot Id vs. Vgs
+
+Find the point of maximum slope (maximum gm)
+
+Extrapolate the tangent line to Id = 0
+
+The intercept is Vt
+
+[Insert Vt Extraction Diagram Image]
+
+Practical Vt Extraction
+For our Sky130 short-channel device:
+
+spice
+* Vt Extraction
+.include '../../models/lib.spice'
+
+M1 D G 0 0 sky130_fd_pr__nfet_01v8__tt W=0.39u L=0.15u
+Vds D 0 DC 0.1V  * Use small Vds for linear region
+Vgs G 0 DC 0V
+
+.dc Vgs 0 1.8 0.001
+.plot dc I(M1)
+.end
+[Insert Vt Extraction Simulation Image]
+
+Extraction Steps:
+
+Identify the linear region of the Id-Vgs curve (where current rises steeply)
+
+Draw a tangent at the point of maximum slope
+
+Extend the tangent to intersect the Vgs axis (Id = 0)
+
+Read Vt at the intersection point
+
+[Insert Tangent Method Image]
+
+For the Sky130 short-channel NMOS with W=0.39μm, L=0.15μm, the extracted Vt is approximately 0.76V.
+
+Factors Affecting Vt
+Factor	Effect on Vt
+Channel Length	Shorter channels → Lower Vt (Vt roll-off)
+Drain Voltage	Higher Vds → Lower Vt (DIBL effect)
+Temperature	Higher temp → Lower Vt
+Body Bias	Reverse bias → Higher Vt
+CMOS Voltage Transfer Characteristics (VTC)
+L1: MOSFET as a Switch
+The Switch Analogy
+To understand CMOS inverter operation, it's helpful to view each MOSFET as an ideal voltage-controlled switch:
+
+[Insert MOSFET Switch Analogy Image]
+
+Switch Operation:
+
+When |Vgs| < |Vt|: MOSFET is OFF → Acts as open switch
+
+[Insert Open Switch Image]
+
+When |Vgs| > |Vt|: MOSFET is ON → Acts as closed switch with finite resistance
+
+[Insert Closed Switch Image]
+
+Switch Model Parameters
+For circuit analysis, the ON resistance (Ron) is given by:
+
+Ron = 1/[μ·Cox·(W/L)·(Vgs - Vt)]
+
+This resistance determines how quickly a MOSFET can charge or discharge a capacitive load.
+
+L2: Standard MOS Voltage and Current Parameters
+CMOS Inverter Structure
+The CMOS inverter consists of a complementary pair:
+
+Pull-up network: PMOS transistor connected to VDD
+
+Pull-down network: NMOS transistor connected to VSS (GND)
+
+[Insert CMOS Inverter Structure Image]
+
+Operating States
+Case 1: Vin = HIGH (VDD)
+
+PMOS: Vsg = 0V → Vsg < |Vtp| → PMOS OFF
+
+NMOS: Vgs = VDD → Vgs > Vtn → NMOS ON
+
+[Insert Vin High Equivalent Circuit Image]
+
+Current flows from the output load through the NMOS to ground, discharging the capacitor.
+
+Case 2: Vin = LOW (0V)
+
+PMOS: Vsg = VDD → Vsg > |Vtp| → PMOS ON
+
+NMOS: Vgs = 0V → Vgs < Vtn → NMOS OFF
+
+[Insert Vin Low Equivalent Circuit Image]
+
+Current flows from VDD through the PMOS to charge the output capacitor.
+
+Current Relationships
+In steady-state DC operation:
+
+Idsn = -Idsp
+
+The currents are equal in magnitude but opposite in direction.
+
+[Insert Current Direction Image]
+
+L3: PMOS and NMOS Drain Current vs. Drain Voltage
+Individual Device Characteristics
+NMOS Characteristics:
+
+Idsn vs. Vdsn for various Vgsn
+
+Vgsn = Vin (since source is grounded)
+
+[Insert NMOS Id-Vds Family Image]
+
+PMOS Characteristics:
+
+Idsp vs. Vdsp for various Vsgp
+
+Note: PMOS currents are negative (conventional current flows from source to drain)
+
+[Insert PMOS Id-Vds Family Image]
+
+Complementary Nature
+When combined in an inverter:
+
+NMOS conducts when Vin is HIGH
+
+PMOS conducts when Vin is LOW
+
+Both conduct during the switching transition
+
+L4: Step 1 - Convert PMOS Gate-Source Voltage to Input Voltage (Vin)
+From Internal to External Voltages
+Users cannot directly observe internal transistor voltages—only Vin and Vout are accessible. We must express all device voltages in terms of these external quantities.
+
+Assumptions for this analysis:
+
+Long-channel devices
+
+VDD = 2.0V
+
+Symmetric threshold voltages (|Vtp| = Vtn)
+
+PMOS Voltage Relationships
+For the PMOS transistor:
+
+Vgsp = Vin - VDD
+
+Vin (V)	Vgsp (V)
+0.0	-2.0
+0.5	-1.5
+1.0	-1.0
+1.5	-0.5
+2.0	0.0
+[Insert Vgsp Conversion Table Image]
+
+Plotting PMOS Characteristics in Terms of Vin
+We can now replot the PMOS Id-Vdsp curves with Vin as the parameter:
+
+[Insert PMOS Curves with Vin Parameter Image]
+
+Each curve corresponds to a specific Vin value, making it easier to analyze the combined inverter operation.
+
+L5: Step 2 & 3 - Convert PMOS and NMOS Drain-Source Voltage to Output Voltage (Vout)
+PMOS Drain-Source Voltage Conversion
+For PMOS:
+
+Vdsp = Vout - VDD
+
+This represents a shift of the voltage axis. When Vout = VDD, Vdsp = 0V. When Vout = 0V, Vdsp = -VDD.
+
+[Insert Vdsp to Vout Conversion Image]
+
+Example interpretation:
+
+When Vout = 2V: Vdsp = 0V → PMOS has zero current (consistent with cut-off)
+
+When Vout = 0V: Vdsp = -2V → PMOS can conduct maximum current
+
+PMOS Load Curves
+By applying this transformation, we obtain the PMOS load curves:
+
+[Insert PMOS Load Curves Image]
+
+These curves show the current the PMOS can deliver at each Vout for a given Vin.
+
+NMOS Direct Mapping
+For NMOS, the mapping is straightforward:
+
+Vgsn = Vin
+Vdsn = Vout
+
+[Insert NMOS Direct Mapping Image]
+
+The NMOS load curves are simply the standard Id-Vds characteristics with Vin as the parameter.
+
+[Insert NMOS Load Curves Image]
+
+L6: Step 4 - Merge PMOS and NMOS Load Curves to Plot VTC
+Superposition of Load Curves
+The voltage transfer characteristic is found by superimposing the PMOS and NMOS load curves and finding the intersection points for each Vin.
+
+[Insert Merged Load Curves Image]
+
+For each Vin value, we find the Vout where:
+Idsn(Vin, Vout) = -Idsp(Vin, Vout)
+
+This is the DC operating point of the inverter.
+
+Complete VTC Analysis
+Vin = 0V:
+
+NMOS: Cut-off (Idsn = 0)
+
+PMOS: Linear region, maximum current
+
+Vout = 2V (PMOS pulls output to VDD)
+
+[Insert Vin=0 Operating Point Image]
+
+Vin = 0.5V:
+
+NMOS: Saturation region (just turning on)
+
+PMOS: Linear region (still strongly on)
+
+Vout ≈ 1.8V (slightly below VDD)
+
+Vin = 1.0V:
+
+NMOS: Saturation region
+
+PMOS: Saturation region
+
+Vout ≈ 1.0V (both devices in saturation, midpoint)
+
+Vin = 1.5V:
+
+NMOS: Linear region (strongly on)
+
+PMOS: Saturation region (just turning off)
+
+Vout ≈ 0.2V (near ground)
+
+Vin = 2.0V:
+
+NMOS: Linear region, maximum current
+
+PMOS: Cut-off (Idsp = 0)
+
+Vout = 0V (NMOS pulls output to ground)
+
+Summary of Operating Regions
+Vin Range	Vout Range	NMOS Region	PMOS Region
+0V	2V	Cut-off	Linear
+0V - 0.5V	1.5V - 2V	Saturation	Linear
+0.5V - 1.5V	0.5V - 1.5V	Saturation	Saturation
+1.5V - 2V	0V - 0.5V	Linear	Saturation
+2V	0V	Linear	Cut-off
+Final VTC Plot
+Connecting all operating points yields the classic inverting voltage transfer characteristic:
+
+[Insert Complete VTC Plot Image]
+
+Key VTC Parameters:
+
+VOH = Maximum output voltage (≈ VDD)
+
+VOL = Minimum output voltage (≈ GND)
+
+VIL = Input voltage where gain = -1 (beginning of transition)
+
+VIH = Input voltage where gain = -1 (end of transition)
+
+VM = Switching threshold (Vout = Vin)
+
+Gain = ΔVout/ΔVin (maximum in transition region)
+
+Key Takeaways for Day 2
+Concept	Key Insight
+Velocity Saturation	Limits current in short-channel devices; causes linear Id-Vgs at high Vgs
+Four Operating Regions	Short-channel devices add velocity saturation to classical regions
+Vt Extraction	Tangent method yields Vt ≈ 0.76V for Sky130 short-channel NMOS
+VTC Construction	Merge PMOS and NMOS load curves by expressing all voltages in terms of Vin, Vout
+Operating Regions	CMOS inverter passes through all regions during switching
