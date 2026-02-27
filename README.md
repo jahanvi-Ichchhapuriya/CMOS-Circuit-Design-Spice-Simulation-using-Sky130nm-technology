@@ -345,6 +345,9 @@ Now we will write the syntax for this particular circuit in SPICE netlist. To do
 * **Write the code**
   `since modfet has 4 terminals, it is lying between 4 different nodes, similarly resistor is lying between 2 nodes.`
 
+![WhatsApp Image 2026-02-27 at 12 49 26 PM](https://github.com/user-attachments/assets/30d95df1-109c-4306-a6b1-894b7b0a1a3b)
+
+
 <img width="1307" height="418" alt="image" src="https://github.com/user-attachments/assets/fe360627-afb9-41d7-917d-95b7ac8ca6b7" />
 <img width="1211" height="371" alt="image" src="https://github.com/user-attachments/assets/5d8f624b-296a-499a-9cc2-c9fd0946fb52" />
 <img width="1213" height="412" alt="image" src="https://github.com/user-attachments/assets/c7d30d08-94c4-4891-95b3-4fc8c95fa3c9" />
