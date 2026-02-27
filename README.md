@@ -146,7 +146,19 @@ What will happen if we further increase Vgs? As there are no more negative charg
 
 <img width="482" height="446" alt="image" src="https://github.com/user-attachments/assets/c5805eb4-1587-4426-b747-e6f1b65c9d56" />
 
-
+**Threshold Voltage**</br>
+* Vgs = 0
+* Drain, Source, Bulk connected to GND
+* Substrate-Source (B-S) and Substrate-Drain (B-D) form p-n junction diode
+* Both junctions are 'off' due to OV bias
+* Hence, S-D resistance is 'high'
+Apply +ve Vgs voltage
+* Increase gate voltage "Vgs'
+* This phenomenon is called 'strong inversion'
+* The "Vgs' voltage at which 'strong inversion' occurs is called threshold vge (Vt)
+* Further, increase "Vgs'
+* No Change in depletion layer width
+* Electrons from heavily doped 'n+' source region are drawn in region under gate 'G'
 <img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/f8c47353-dbf7-4026-b4d9-89ebff6cd24d" />
 
 <img width="1350" height="618" alt="image" src="https://github.com/user-attachments/assets/183a52c0-755d-43c6-9731-9043b047e679" />
