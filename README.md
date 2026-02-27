@@ -504,3 +504,59 @@ Use descriptive names for clarity:
 #### Step 3: Write the Component Statements
 
 **MOSFET Syntax:**
+
+# Day 2: Velocity Saturation and CMOS Inverter Voltage Transfer Characteristics (VTC)
+
+## SPICE Simulation for Lower Nodes and Velocity Saturation Effect
+
+### L1: SPICE Simulation for Lower Technology Nodes
+
+#### Review of Long-Channel MOSFET Behavior
+
+In Day 1, we examined the Id vs. Vds characteristics for long-channel devices. The family of curves revealed three distinct regions of operation:
+
+- **Cut-off region** (Vgs < Vt): No current flows
+- **Linear region** (Vds < Vgs - Vt): Current increases approximately linearly with Vds
+- **Saturation region** (Vds ≥ Vgs - Vt): Current ideally becomes constant
+
+`[Insert Long-Channel Id-Vds Curve Image]`
+
+The boundary between linear and saturation regions is defined by the condition:
+**Vdsat = Vgs - Vt**
+
+For long-channel devices, this relationship holds true across all bias conditions.
+
+#### The Scaling Challenge
+
+Now consider what happens when we scale the transistor dimensions. If we maintain the same **W/L ratio** but reduce both W and L proportionally, classical theory suggests the drain current should remain unchanged:
+
+**Id ∝ (W/L)**
+
+However, **real devices deviate significantly** from this idealized behavior as channel lengths shrink below 1μm.
+
+`[Insert Scaling Comparison Image]`
+
+#### Simulation Setup for Short-Channel Devices
+
+Let's examine a SPICE deck comparing long and short-channel devices while keeping W/L constant:
+
+```spice
+* Comparison of Long vs Short Channel NMOS
+.include 'sky130_fd_pr/models.lib'
+
+* Long-channel device (L = 1.40μm)
+M_long D G 0 0 sky130_fd_pr__nfet_01v8__tt W=13.44u L=1.40u
+
+* Short-channel device (L = 0.15μm)  
+M_short D G 0 0 sky130_fd_pr__nfet_01v8__tt W=1.44u L=0.15u
+
+* Note: W/L ratio is approximately the same (9.6)
+* Long: 13.44/1.40 = 9.6
+* Short: 1.44/0.15 = 9.6
+
+Vgs G 0 DC 1.8V
+Vds D 0 DC 0V
+
+.dc Vds 0 1.8 0.01
+.plot dc I(M_long) I(M_short)
+.end
