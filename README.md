@@ -162,7 +162,7 @@ Apply +ve Vgs voltage
 
 <img width="492" height="433" alt="image" src="https://github.com/user-attachments/assets/bcd6cba0-7eb7-4d8b-a6a3-aab44d5a526f" />
 
-<img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/f8c47353-dbf7-4026-b4d9-89ebff6cd24d" />
+
 <img width="485" height="448" alt="image" src="https://github.com/user-attachments/assets/0aaf8167-cdb8-429a-bc0f-75b4afe5a301" />
 
 **Threshold Voltage**</br>
@@ -180,7 +180,6 @@ Apply +ve Vgs voltage
 * Electrons from heavily doped 'n+' source region are drawn in region under gate 'G'
 Continuous n-channel formation from
 S-D, whose conductivity is modulated by 'Vgs
-<img width="1350" height="618" alt="image" src="https://github.com/user-attachments/assets/183a52c0-755d-43c6-9731-9043b047e679" />
 
 Now there is a possibility of current from Source to Drain. The channel has bridged the gap between source to drain regions. But as there is no Drain voltage so the elctrons will not move, this is "Cut Off Region" now.</br>
 
