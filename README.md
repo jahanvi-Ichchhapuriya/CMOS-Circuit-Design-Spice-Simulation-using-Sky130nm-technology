@@ -320,6 +320,9 @@ This is called "Channel Length Modulation".</br>
 ### L1 Basic SPICE setup
 First let us look into the SPICE setup.</br>
 
+![WhatsApp Image 2026-02-27 at 2 16 43 PM](https://github.com/user-attachments/assets/706d9976-836f-4e25-a1cf-776cd8468d1b)
+
+
 <img width="1412" height="611" alt="image" src="https://github.com/user-attachments/assets/5872cd9a-70d1-46cf-9fe4-f5247f8d3415" />
 
 Some parameters are constant, and directly coming from the foundaries we don't have to derive them. These are circiled in yellow.</br>
