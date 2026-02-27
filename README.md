@@ -90,13 +90,13 @@ Let us say we have done some Clock Tree Synthesis of the circuit shown below wit
 <img width="386" height="359" alt="image" src="https://github.com/user-attachments/assets/8358dc5f-2b2b-49ae-8d8c-daf22c37fb90" />
 
 **Let us assume C1 = C2 = C3 = C4 = 25fF**</br>
-How about creating a buffer tree at node 'A'
-Let us assume Cbuf1 = Cbuf2 = 30fF
+How about creating a buffer tree at node 'A'</br>
+Let us assume Cbuf1 = Cbuf2 = 30fF</br>
 Therefore, total Cap at node 'A' => 60fF</br>
 Therefore, total Cap at node 'B' => 50fF</br>
 Therefore, total Cap at node 'C' => 50fF</br>
 
-**Observations**</br>
+**Here Observations are**</br>
 * 2 levels of buffering
 At every level, each node driving same load
 * Identical buffer at same level
