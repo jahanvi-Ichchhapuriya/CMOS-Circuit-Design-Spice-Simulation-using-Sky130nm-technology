@@ -116,7 +116,7 @@ An NMOS transistor consist of P-type substrate, heavily doped with n+ region. Th
 * 4 terminal Device
 * Consists of P-Substrate
 * Isolation Region (SiO2)
-* n* Diffusion Region
+* n+ Diffusion Region
 * Gate Oxide
 * Poly-Si or metal gate
 * G -Gate
@@ -163,6 +163,8 @@ Apply +ve Vgs voltage
 <img width="492" height="433" alt="image" src="https://github.com/user-attachments/assets/bcd6cba0-7eb7-4d8b-a6a3-aab44d5a526f" />
 
 <img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/f8c47353-dbf7-4026-b4d9-89ebff6cd24d" />
+<img width="485" height="448" alt="image" src="https://github.com/user-attachments/assets/0aaf8167-cdb8-429a-bc0f-75b4afe5a301" />
+
 **Threshold Voltage**</br>
 * Vgs = 0
 * Drain, Source, Bulk connected to GND
