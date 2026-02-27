@@ -138,7 +138,7 @@ Due to Accumulation of negatuve charges, there will be formation of Depletion Re
 
 <img width="831" height="402" alt="image" src="https://github.com/user-attachments/assets/335a3525-699e-4c66-8161-2201df2b9070" />
 
-Now we will increase the Gate voltage further, we will see that the positive charge carriers will be repelled and there will be increase of Depletion Width. On further increase of Gate voltage we will reach at a point where the surface gets inverted into an n-type material, this is called "Surface Inversion" or "Stronf Inversion". The gate voltage of Vgs voltage where "Strong Inversion" happens is called "Threshold Voltage".</br>
+Now we will increase the Gate voltage further, we will see that the positive charge carriers will be repelled and there will be increase of Depletion Width. On further increase of Gate voltage we will reach at a point where the surface gets inverted into an n-type material, this is called "Surface Inversion" or "Strong Inversion". The gate voltage of Vgs voltage where "Strong Inversion" happens is called "Threshold Voltage".</br>
 
 <img width="732" height="411" alt="image" src="https://github.com/user-attachments/assets/24694a9d-523c-4363-bcd0-95eb5f3c2cd4" />
 
