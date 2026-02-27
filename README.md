@@ -144,6 +144,9 @@ Now we will increase the Gate voltage further, we will see that the positive cha
 
 What will happen if we further increase Vgs? As there are no more negative charges that will be attracted towards the positive Vgs, The negative charges from n+ region will get attracted and so there will be a formation of channel at the surface.</br>
 
+<img width="482" height="446" alt="image" src="https://github.com/user-attachments/assets/c5805eb4-1587-4426-b747-e6f1b65c9d56" />
+
+
 <img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/f8c47353-dbf7-4026-b4d9-89ebff6cd24d" />
 
 <img width="1350" height="618" alt="image" src="https://github.com/user-attachments/assets/183a52c0-755d-43c6-9731-9043b047e679" />
