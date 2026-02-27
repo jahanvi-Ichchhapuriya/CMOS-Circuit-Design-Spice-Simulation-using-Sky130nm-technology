@@ -100,7 +100,6 @@ Therefore, total Cap at node 'C' => 50fF</br>
 * 2 levels of buffering
 At every level, each node driving same load
 * Identical buffer at same level
-<img width="1206" height="392" alt="image" src="https://github.com/user-attachments/assets/a0dbe0ed-6981-4966-8d1d-7bf4d223ef61" />
 
 After the SPICE simulation we get a "Delay Table", which includes input slew and output load. The intersection value of Input slew and Output load is considered as Delay. Delay tables for both level 1 and level 2 buffers have been shown. This is calculated by circuit design and simulation</br>
 
