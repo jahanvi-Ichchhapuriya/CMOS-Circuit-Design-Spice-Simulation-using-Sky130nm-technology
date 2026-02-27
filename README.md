@@ -966,13 +966,6 @@ We will draw some conclusions from the characteristics we got.
 
 ### L5 Sky130 device variations labs
 We will now do the SPICE simulations for the device variations</br>
-
-<img width="1912" height="1079" alt="Screenshot 2025-10-03 231604" src="https://github.com/user-attachments/assets/5b26708d-6351-4aa8-b2d2-758a174a6f8b" />
-<img width="1919" height="1079" alt="Screenshot 2025-10-03 231715" src="https://github.com/user-attachments/assets/518ac3f8-9460-49ab-943e-e09cc37ca4ac" />
-
 We can see that the width of PMOS is quite large than that of NMOS. SO it is clearly strong PMOS and weak NMOS case. The Vm will be right shifted.</br>
-
-<img width="1919" height="1079" alt="Screenshot 2025-10-03 231914" src="https://github.com/user-attachments/assets/ef15e759-7036-445a-b5b1-53b0df38050a" />
-
 <img width="1126" height="594" alt="image" src="https://github.com/user-attachments/assets/3bd621fa-c18f-4fe8-aec9-327735420b9a" />
 
