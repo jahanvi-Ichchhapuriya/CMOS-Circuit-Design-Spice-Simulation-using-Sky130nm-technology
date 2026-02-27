@@ -341,23 +341,18 @@ Now we will write the syntax for this particular circuit in SPICE netlist. To do
 The fashion in which it is written is "Drain", "Gate", "Source", and "Substrate" (DGSS).</br>
 Similarly we can write for Resistor.</br>
 
-<img width="637" height="308" alt="image" src="https://github.com/user-attachments/assets/6498b3c6-8eda-40ee-adf7-c9a6e332675f" />
+![WhatsApp Image 2026-02-27 at 2 28 48 PM](https://github.com/user-attachments/assets/5292f483-739f-42dd-8e41-0f5bd14e4559)
+
 
 ### L3 Define Technology parameters
 Now we will look for model of this particular NMOS. For this we have model paramters, and it becomes easy to model from the parameters. That is where the technology file comes into picture. The models for the name NMOs will be found in file which has the attribute of the similar name.</br>
 
-<img width="1312" height="592" alt="image" src="https://github.com/user-attachments/assets/4fa6b7c5-61d6-45f7-ba68-ad15a67426eb" />
 
 Inside the brackets, technology paramteters will exist. Similarly for pmos also.</br>
 
-<img width="542" height="107" alt="image" src="https://github.com/user-attachments/assets/cbef3e32-99d7-4998-9957-e89c4ba96c57" />
 
 Now, we just plug in this packaged file in `.mod` file and call this file in top level SPICE netlist.</br>
 
-<img width="553" height="475" alt="image" src="https://github.com/user-attachments/assets/f7752179-bfcb-420b-a1df-0af1a648be2c" />
-<img width="603" height="197" alt="image" src="https://github.com/user-attachments/assets/23ce231b-f774-437b-ae5a-d3f0836d0a57" />
-
-<img width="635" height="257" alt="image" src="https://github.com/user-attachments/assets/163cf011-37b0-450d-b7d4-4a915bc70653" />
 
 In the above image, the highlighted part is comment in SPICE.</br>
 Now, we need to sweep the Vgs and Vds for SPICE simulations.</br>
