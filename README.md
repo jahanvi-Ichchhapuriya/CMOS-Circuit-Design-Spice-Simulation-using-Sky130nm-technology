@@ -88,12 +88,12 @@ Without SPICE, we cannot determine delays. Without delays, the physical design f
 
 Let us say we have done some Clock Tree Synthesis of the circuit shown below with bufffers with different capacitive load at the output.</br>
 <img width="386" height="359" alt="image" src="https://github.com/user-attachments/assets/8358dc5f-2b2b-49ae-8d8c-daf22c37fb90" />
-Let us assume C1 = C2 ÷ C3 = C4 = 25fF
+
+**Let us assume C1 = C2 ÷ C3 = C4 = 25fF**</br>
 How about creating a buffer tree at node 'A'
 Let us assume Cbuf1 = Cbuf2 = 30fF
 Therefore, total Cap at node 'A' => 60fF
 Therefore, total Cap at node 'B' = 50fF
-om/
 Therefore, total Cap at node 'C' => 50fF
 <img width="1206" height="392" alt="image" src="https://github.com/user-attachments/assets/a0dbe0ed-6981-4966-8d1d-7bf4d223ef61" />
 
