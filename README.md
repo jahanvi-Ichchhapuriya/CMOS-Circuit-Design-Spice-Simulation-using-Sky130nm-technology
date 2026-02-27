@@ -195,7 +195,7 @@ There will be increase in depletion region between source and body terminal. </b
 If we increase Vgs, we will see that the depletion region increase in both the cases. But, in second case as there is Vsb +ve, few charges from channel will be pulled towards the source.</br>
 ![WhatsApp Image 2026-02-27 at 5 41 57 PM](https://github.com/user-attachments/assets/c4ea3c2d-16e2-43ab-8d95-19425d1a8473)
 
-![Uploading image.png…]()
+<img width="895" height="694" alt="image" src="https://github.com/user-attachments/assets/864013fc-8998-4a45-8607-ebc5bda062ab" />
 
 Due to this the surface inversion will be slower in second case. Therefore some extra potential has to be apllied in second case to create inversion.</br>
 
@@ -948,7 +948,7 @@ We will see the characteristics for Strong PMOS and week NMOS, this means PMOS w
 <img width="1148" height="339" alt="Screenshot 2025-10-03 224857" src="https://github.com/user-attachments/assets/398d01a6-ffc4-4a10-86a8-3907d3214b69" />
 <img width="594" height="436" alt="Screenshot 2025-10-03 224935" src="https://github.com/user-attachments/assets/41b1f2f6-c4ba-4c71-a8e6-d1fc8e3b4844" />
 <img width="695" height="398" alt="Screenshot 2025-10-03 224949" src="https://github.com/user-attachments/assets/9314e15f-c027-47ba-b34e-f35d886e5aff" />
-<img width="726" height="321" alt="Screenshot 2025-10-03 225121" src="https://github.com/user-attachments/assets/280f196e-1bde-417a-9955-7a0f2029ee39" />
+<img width="895" height="694" alt="image" src="https://github.com/user-attachments/assets/73b6f593-69c9-4e9f-82ff-a56e4c25e6d0" />
 <img width="753" height="567" alt="Screenshot 2025-10-03 225153" src="https://github.com/user-attachments/assets/33e8fc0e-5220-4dc4-8da9-4c8dd5406e02" />
 
 ### L4 Conclusion
