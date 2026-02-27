@@ -101,7 +101,18 @@ An NMOS transistor consist of P-type substrate, heavily doped with n+ region. Th
 
 <img width="558" height="490" alt="image" src="https://github.com/user-attachments/assets/4ca9adc2-2c44-4f11-98e7-0ad0cd42485a" />
 
-<img width="1195" height="507" alt="image" src="https://github.com/user-attachments/assets/fafb4e04-8d70-42dd-bae3-7570c38be028" />
+## NMOS
+* 4 terminal Device
+* Consists of P-Substrate
+* Isolation Region (SiO2)
+* n* Diffusion Region
+* Gate Oxide
+* Poly-Si or metal gate
+* G -Gate
+* S - Source
+* D - Drain
+* B - Body
+
 
 **Threshold Voltage**
 This is a very important term, all the characterisation depends on threshold voltage.</br>
