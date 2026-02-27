@@ -431,3 +431,76 @@ Where **λ (lambda)** is the channel length modulation parameter.
 ## Next Steps
 
 Proceed to **Day 2** where we explore velocity saturation effects and CMOS inverter voltage transfer characteristics.
+
+# Introduction to SPICE
+
+## L1: Basic SPICE Setup
+
+### Understanding the SPICE Simulation Flow
+
+Before diving into simulations, it's essential to understand the complete SPICE setup and how various components interact to produce meaningful results.
+
+`[Insert SPICE Setup Overview Image]`
+
+### Fixed Parameters from Foundries
+
+Certain parameters are **process-dependent constants** provided directly by the foundry. These are derived from extensive silicon characterization and do not require designer derivation. Key parameters include:
+
+- **Oxide capacitance (Cox)**
+- **Carrier mobility (μn, μp)**
+- **Threshold voltage (Vt) parameters**
+- **Process corner variations**
+
+`[Insert Circled Parameters Image]`
+
+### The Simulation Workflow
+
+The SPICE simulation engine requires two primary inputs to generate device characteristics:
+
+1. **SPICE Model Parameters** - The technology file containing device physics equations and constants
+2. **SPICE Netlist** - The circuit description defining connectivity, component values, and analysis types
+
+`[Insert Simulation Flow Diagram Image]`
+
+When these inputs are processed, the output provides comprehensive **device characteristics**—typically current-voltage (I-V) relationships such as Id vs. Vds for multiple Vgs values.
+
+### MOSFET Circuit Representation
+
+For simulation purposes, every MOSFET is represented by an **equivalent circuit model** that captures:
+- Intrinsic transistor behavior
+- Parasitic capacitances
+- Series resistances
+- Body diode effects
+
+`[Insert MOSFET Equivalent Circuit Image]`
+
+---
+
+## L2: Circuit Description in SPICE Syntax
+
+### Step-by-Step Netlist Creation
+
+Writing a SPICE netlist requires a systematic approach. Follow these steps to create error-free circuit descriptions:
+
+#### Step 1: Define Nodes
+
+Every connection point in the circuit must be assigned a unique node identifier. Nodes can be:
+- **Numbers** (0, 1, 2, 3...)
+- **Names** (VDD, GND, OUT, IN...)
+
+`[Insert Node Definition Image]`
+
+#### Step 2: Assign Meaningful Names
+
+Use descriptive names for clarity:
+- **VDD** - Power supply
+- **GND** - Ground (always node 0)
+- **IN** - Input signal
+- **OUT** - Output node
+- **D, G, S, B** - Drain, Gate, Source, Body terminals
+
+`[Insert Named Nodes Image]`
+
+#### Step 3: Write the Component Statements
+
+**MOSFET Syntax:**
