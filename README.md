@@ -76,12 +76,15 @@ Modern digital circuits are built using complementary MOS (CMOS) technology, whe
 
 <img width="547" height="487" alt="image" src="https://github.com/user-attachments/assets/fa0a416d-73b5-4060-80ee-60ca0b97e0ae" />
 
-The above inverter will have the following charactersitics, we will do the SPICE simulations to find the delay and so we will get the W/L ratio of the particular transistor.</br>
-
-<img width="965" height="695" alt="image" src="https://github.com/user-attachments/assets/e2264a62-e4b1-4506-bb0f-eded09d303f3" />
+Through SPICE simulations, we characterize this inverter's delay behavior and derive the appropriate W/L ratios for both PMOS and NMOS transistors.</br>
 
 **WHy do we need SPICE?**</br>
-The clock Tree synthesis, crosstalks, and timing are built on SPICE (Simulation Program with Integrated Circuit Emphasis), without SPICE there won't be delays and if there are no delays physical design flow, crosstalk won't make any sense.</br>
+SPICE simulations are the bedrock of three critical aspects of digital design:
+- **Clock Tree Synthesis (CTS)** : Requires delay information for buffer placement and sizing
+- **Timing Analysis**: Depends on accurate cell delay characterization
+- **Crosstalk Analysis**: Needs delay variations to assess signal integrity
+
+Without SPICE, we cannot determine delays. Without delays, the physical design flow operates blindly, and crosstalk analysis becomes meaningless..</br>
 
 Let us say we have done some Clock Tree Synthesis of the circuit shown below with bufffers with different capacitive load at the output.</br>
 
