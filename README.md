@@ -462,7 +462,8 @@ So, for lower node we will have 4 regions of operations: **Cut Off, Linear, Satu
 **Velocity Saturation**
 We know velocity and electric field are related to each other with equation `v=uE`, where v is velocity, E is electric field and u is mobility. Velocity increases linearly with electric field over certain electric field value after which it gets saturated. This is due to scattering at higher fields and mobility decreases. </br>
 
-<img width="973" height="506" alt="image" src="https://github.com/user-attachments/assets/57f60dd0-b579-4e67-962d-03c21c430e49" />
+
+![WhatsApp Image 2026-02-27 at 2 52 16 PM](https://github.com/user-attachments/assets/0638d759-085a-4f20-b3c8-954263d7c095)
 
 Velocity saturation happens for higher gate-source voltages.</br>
 
