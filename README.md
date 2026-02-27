@@ -986,17 +986,14 @@ Therefore the variation in L and W can change the drain current of CMOS inverter
 
 ### L2 Sources of variation - Oxide thickness
 Let us consider the cross-sectional view of CMOS inverter. We will see the oxide under polysilicon gate, while fabricating the thickness can vary.</br>
+![WhatsApp Image 2026-02-27 at 9 38 26 PM](https://github.com/user-attachments/assets/4be170ec-d28d-4a42-9593-f0905d4ff31a)
 
-<img width="1318" height="561" alt="Screenshot 2025-10-03 203747" src="https://github.com/user-attachments/assets/25b705ca-1d73-4127-a9bc-a69e2af0c8c2" />
-<img width="826" height="377" alt="Screenshot 2025-10-03 203848" src="https://github.com/user-attachments/assets/df455509-4718-4074-9eda-bb314e6462c0" />
 
 There is a difference between ideal thickness and actual thickness.
 
-<img width="1205" height="597" alt="Screenshot 2025-10-03 203924" src="https://github.com/user-attachments/assets/a802cce3-df91-4e80-9b34-d2f931de9f8d" />
 
 We know **Cox=Eox/tox**, therefore change in tox can actually change the drain current.
 
-<img width="1162" height="461" alt="Screenshot 2025-10-03 204044" src="https://github.com/user-attachments/assets/d06ee6da-3467-41cb-8a0e-280b15faae56" />
 
 ### L3 Smart SPICE simulation for device variations
 To prove the CMOS inverter's robustness, we will simulate two extreme cases using SPICE:
