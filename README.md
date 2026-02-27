@@ -195,7 +195,7 @@ There will be increase in depletion region between source and body terminal. </b
 If we increase Vgs, we will see that the depletion region increase in both the cases. But, in second case as there is Vsb +ve, few charges from channel will be pulled towards the source.</br>
 ![WhatsApp Image 2026-02-27 at 5 41 57 PM](https://github.com/user-attachments/assets/c4ea3c2d-16e2-43ab-8d95-19425d1a8473)
 
-<img width="1247" height="617" alt="image" src="https://github.com/user-attachments/assets/65d128ea-03af-4dd4-af13-28b261e0fe66" />
+![Uploading image.png…]()
 
 Due to this the surface inversion will be slower in second case. Therefore some extra potential has to be apllied in second case to create inversion.</br>
 
