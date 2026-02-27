@@ -71,7 +71,8 @@
 ## Introduction to Circuit Design and Spice Simulations
 
 ### L1 Why do we need SPICE simulations?
-A circuit design includes PMOS and NMOS tied together in such a fashion that they result into logic gates such as NAND, NOR, OR, AND etc.</br>
+Modern digital circuits are built using complementary MOS (CMOS) technology, where PMOS and NMOS transistors are interconnected to form fundamental logic gates—NAND, NOR, OR, AND, and the most basic building block, the **inverter**.
+</br>
 
 <img width="542" height="526" alt="image" src="https://github.com/user-attachments/assets/bf9b9eed-3cf4-41be-bcfe-8b3ea7eadcb0" />
 
