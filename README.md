@@ -1,7 +1,7 @@
 # CMOS-Circuit-Design-Spice-Simulation-using-Sky130nm-technology
 This repository contains a comprehensive series of SPICE simulation labs and tutorials for CMOS circuit design using the open-source Sky130nm. The content is structured across five days of progressively complex topics, from basic NMOS characteristics to complete CMOS inverter robustness analysis.
 ## Table Of Contents
-- [Day1-Basics of NMOS Drain Current(Id) vs Drain-to-source Voltage(Vds)](#NgspiceSky130-Day1-Basics-of-NMOS-Drain-Current(Id)-vs-Drain-to-source-Voltage(Vds))
+- [Day1-Basics of NMOS Drain Current(Id) vs Drain-to-source Voltage(Vds)](#Day1-Basics-of-NMOS-Drain-Current(Id)-vs-Drain-to-source-Voltage(Vds))
   - [Introduction to Circuit Design and Spice Simulations](#Introduction-to-Circuit-Design-and-Spice-Simulations)
     - [L1 Why do we need SPICE simulations?](#L1-Why-do-we-need-SPICE-simulations?)
     - [L2 Introduction to basic element in circuit design-NMOS](#L2-Introduction-to-basic-element-in-circuit-design-NMOS)
@@ -20,7 +20,7 @@ This repository contains a comprehensive series of SPICE simulation labs and tut
     - [L3 Define Technology parameters](#L3-Define-Technology-parameters)
     - [L4 First SPICE simulation](#L4-First-SPICE-simulation)
     - [L5 SPICE lab with Sky130 models](#L5-SPICE-lab-with-Sky130-models)
-- [Day2-Velocity saturation and basics of CMOS inverter VTC](#NgspiceSky130-Day2-Velocity-saturation-and-basics-of-CMOS-inverter-VTC)
+- [Day2-Velocity saturation and basics of CMOS inverter VTC](#Day2-Velocity-saturation-and-basics-of-CMOS-inverter-VTC)
   - [SPICE simulation for lower nodes and velocity saturation effect](#SPICE-simulation-for-lower-nodes-and-velocity-saturation-effect)
     - [L1 SPICE simulation for lower nodes](#L1-SPICE-simulation-for-lower-nodes)
     - [L2 Drain current vs gate voltage for long and short channel device](#L2-Drain-current-vs-gate-voltage-for-long-and-short-channel-device)
@@ -35,7 +35,7 @@ This repository contains a comprehensive series of SPICE simulation labs and tut
     - [L4 Step1- Convert PMOS gate-source-voltage to Vin](#L4-Step1--Convert-PMOS-gate-source-voltage-to-Vin)
     - [L5 Step2 & Step3- Convert PMOS and NMOS drain-source-voltage to Vout](#L5-Step2-&-Step3--Convert-PMOS-and-NMOS-drain-source-voltage-to-Vout)
     - [L6 Step4- Merge PMOS-NMOS load curves and plot VTC](#L6-Step4--Merge-PMOS-NMOS-load-curves-and-plot-VTC)
-- [Day3-CMOS switching threshold and dynamic simulations](#NgspiceSky130-Day3-CMOS-switching-threshold-and-dynamic-simulations)
+- [Day3-CMOS switching threshold and dynamic simulations](#Day3-CMOS-switching-threshold-and-dynamic-simulations)
   - [Voltage transfer characteristics-SPICE simulations](#Voltage-transfer-characteristics-SPICE-simulations)
     - [L1 SPICE deck creation for CMOS inverter](#L1-SPICE-deck-creation-for-CMOS-inverter)
     - [L2 SPICE simulation for CMOS inverter](#L2-SPICE-simulation-for-CMOS-inverter)
@@ -47,14 +47,14 @@ This repository contains a comprehensive series of SPICE simulation labs and tut
     - [L4 Static and Dynamic simulation of CMOS inverter](#L4-Static-and-Dynamic-simulation-of-CMOS-inverter)
     - [L5 Static and Dynamic simulation of CMOS inverter with increased PMOS width](#L5-Static-and-Dynamic-simulation-of-CMOS-inverter-with-increased-PMOS-width)
     - [L6 Applications of CMOS inverter in clock network and STA](#L6-Applications-of-CMOS-inverter-in-clock-network-and-STA)
-- [Day4-CMOS Noise Margin robustness evaluation](#NgspiceSky130-Day4-CMOS-Noise-Margin-robustness-evaluation)
+- [Day4-CMOS Noise Margin robustness evaluation](#Day4-CMOS-Noise-Margin-robustness-evaluation)
   - [Static behaviour evaluation-CMOS inverter robustness-Noise Margin](#Static-behaviour-evaluation-CMOS-inverter-robustness-Noise-Margin)
     - [L1 Introduction to Noise Margin](#L1-Introduction-to-Noise-Margin)
     - [L2 Noise Margin voltage paramters](#L2-Noise-Margin-voltage-paramters)
     - [L3 Noise margin equation and summary](#L3-Noise-margin-equation-and-summary)
     - [L4 Noise margin variation with respect to PMOS width](#L4-Noise-margin-variation-with-respect-to-PMOS-width)
     - [L5 Sky130 Noise margin labs](#L5-Sky130-Noise-margin-labs)
-- [Day5-CMOS power supply and device variation robustness evaluation](#NgspiceSky130-Day5-CMOS-power-supply-and-device-variation-robustness-evaluation)
+- [Day5-CMOS power supply and device variation robustness evaluation](#Day5-CMOS-power-supply-and-device-variation-robustness-evaluation)
   - [Static behaviour evaluation-CMOS inverter robustness-Power supply variation](#Static-behaviour-evaluation-CMOS-inverter-robustness-Power-supply-variation)
     - [L1 Smart SPICE simulations for power supply variations](#L1-Smart-SPICE-simulations-for-power-supply-variations)
     - [L2 Advantages and disadvantages using low supply voltage](#L2-Advantages-and-disadvantages-using-low-supply-voltage)
@@ -969,6 +969,7 @@ We will see the sources of variation of VTC characteristics in a CMOS inverter.<
 
 First is **Etching Process** </br>
 If we see a single inverter layout, we will see the length of gate, the width(common area between polysilicon and diffusion). Due to etching process there can be a variation in length and width of CMOS.
+![WhatsApp Image 2026-02-27 at 9 26 54 PM](https://github.com/user-attachments/assets/42d2820f-1050-420d-814b-f63919b53617)
 
 <img width="1208" height="580" alt="Screenshot 2025-10-03 203231" src="https://github.com/user-attachments/assets/f4496266-b2a9-4e21-bb84-54e6519478e4" />
 
