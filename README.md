@@ -873,8 +873,7 @@ Here also we can verify the robustness of CMOS inverter. </br>
 
 Also we come to know the ranges for "Digital design" and "Analog design" in the CMOS inverter.</br>
 
-<img width="741" height="546" alt="image" src="https://github.com/user-attachments/assets/3e9a0cf6-a232-4ff2-ad4c-214b03803af3" />
-<img width="772" height="542" alt="image" src="https://github.com/user-attachments/assets/56c5c94d-b59f-456c-ba92-b22fab03b6d9" />
+![WhatsApp Image 2026-02-27 at 9 47 29 PM](https://github.com/user-attachments/assets/a59a4b8f-07d5-44aa-aec8-444086e1716a)
 
 ### L5 Sky130 Noise margin labs
 We will now plot Noise margins
