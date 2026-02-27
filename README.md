@@ -1004,13 +1004,9 @@ To prove the CMOS inverter's robustness, we will simulate two extreme cases usin
 The inverter's performance under these conditions will demonstrate its reliability.</br>
 
 <img width="1148" height="339" alt="Screenshot 2025-10-03 224857" src="https://github.com/user-attachments/assets/398d01a6-ffc4-4a10-86a8-3907d3214b69" />
-<img width="594" height="436" alt="Screenshot 2025-10-03 224935" src="https://github.com/user-attachments/assets/41b1f2f6-c4ba-4c71-a8e6-d1fc8e3b4844" />
-<img width="695" height="398" alt="Screenshot 2025-10-03 224949" src="https://github.com/user-attachments/assets/9314e15f-c027-47ba-b34e-f35d886e5aff" />
-<img width="895" height="694" alt="image" src="https://github.com/user-attachments/assets/73b6f593-69c9-4e9f-82ff-a56e4c25e6d0" />
-<img width="753" height="567" alt="Screenshot 2025-10-03 225153" src="https://github.com/user-attachments/assets/33e8fc0e-5220-4dc4-8da9-4c8dd5406e02" />
+ 
 
 ### L4 Conclusion from the characteristics we got
-<img width="994" height="537" alt="Screenshot 2025-10-03 231012" src="https://github.com/user-attachments/assets/aec473f9-00f5-4028-b122-fa2922affcb3" />
 
 * The switching threshold **Vm** shifts to the right when the PMOS is stronger, and to the left when the NMOS is stronger. </br>
 
