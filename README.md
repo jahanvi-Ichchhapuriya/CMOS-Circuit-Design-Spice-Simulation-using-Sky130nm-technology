@@ -99,6 +99,8 @@ The source of the above Delay Tables comes from circuit design using SPICE simul
 ### L2 Introduction to basic element in circuit design-NMOS
 An NMOS transistor consist of P-type substrate, heavily doped with n+ region. There is an isolated region which isolates the transistor from other transistors. The n+regions are Source and Drain. Above itthere is an oxide layer, and top of it is metal deposition which is the GAte termianal.</br>
 
+<img width="558" height="490" alt="image" src="https://github.com/user-attachments/assets/4ca9adc2-2c44-4f11-98e7-0ad0cd42485a" />
+
 <img width="1195" height="507" alt="image" src="https://github.com/user-attachments/assets/fafb4e04-8d70-42dd-bae3-7570c38be028" />
 
 **Threshold Voltage**
