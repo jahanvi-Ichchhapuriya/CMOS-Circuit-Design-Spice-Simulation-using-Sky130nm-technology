@@ -430,7 +430,7 @@ Velocity saturation happens for higher gate-source voltages.</br>
 
 
 ### L4 Velocity saturation drain current model
-<img width="987" height="473" alt="image" src="https://github.com/user-attachments/assets/cbe1cdbb-8b18-4c19-97c6-be3e4244fb34" />
+<img width="1141" height="583" alt="image" src="https://github.com/user-attachments/assets/fc5c7a87-68a3-4f7e-b9a3-e7c5911a8b4f" />
 
 **Step 1: Define Overdrive Voltage**
 - Let **Vgt = Vgs - Vt**
