@@ -74,7 +74,7 @@ This repository contains a comprehensive series of SPICE simulation labs and tut
 Modern digital circuits are built using complementary MOS (CMOS) technology, where PMOS and NMOS transistors are interconnected to form fundamental logic gates—NAND, NOR, OR, AND, and the most basic building block, the **inverter**.
 </br>
 
-<img width="542" height="526" alt="image" src="https://github.com/user-attachments/assets/bf9b9eed-3cf4-41be-bcfe-8b3ea7eadcb0" />
+<img width="547" height="487" alt="image" src="https://github.com/user-attachments/assets/fa0a416d-73b5-4060-80ee-60ca0b97e0ae" />
 
 The above inverter will have the following charactersitics, we will do the SPICE simulations to find the delay and so we will get the W/L ratio of the particular transistor.</br>
 
