@@ -206,69 +206,47 @@ The parameters such as Gamma comes from foundaries after simulation of which in 
 ### L1 Resistive region of operation with small drain-source voltage
 Previously, we saw Cut Off region operation, now we will see the "Resistive region"/"Linear Region" of operation by applying Drain-source voltage.
 If we keep on increasing the Gate-source voltage, the channel width keeps on increasing.</br>
+![WhatsApp Image 2026-02-27 at 10 09 16 PM](https://github.com/user-attachments/assets/d8a1da22-f3bd-4fc7-9ee6-2afa0d02f501)
 
-<img width="1305" height="508" alt="image" src="https://github.com/user-attachments/assets/29f349a8-c77e-4d13-a323-82b1fa6bfb74" />
 
 This shows that the net Induced charges is propotional to (Vgs-Vt). Now let's apply very small Vds at start. And keep Vt=0.45V, Vgs also small initially.</br>
 
-<img width="1317" height="567" alt="image" src="https://github.com/user-attachments/assets/aed1572f-fd2b-492d-82ca-bd1ce4a94b1e" />
 
 We can see that the source is grounded and Drain is at some potential, so there will be a voltage gradient accross the channel.</br>
 
-<img width="1318" height="577" alt="image" src="https://github.com/user-attachments/assets/bf52a8c7-5553-4c74-888c-cdb43b09e3bc" />
 
 Also, the Effective channel length is much lesser than the original channel length.</br>
 
-<img width="797" height="510" alt="image" src="https://github.com/user-attachments/assets/c35a777b-b625-495c-bb37-9f92dfd92a64" />
 
 Here, y axis represents the width of transistor and x axis is the voltage across the channel.</br>
 On applying Vds, every point on x axis will vary w.r.t to Vgs-V(x), this will decide the current equation.</br>
 
-<img width="817" height="558" alt="image" src="https://github.com/user-attachments/assets/a472661e-b9bd-4cfb-8437-ea5be2474fe2" />
 
 ### L2 Drift current theory
 We know the effective channel voltage will vary w.r.t x, for example at x=0, Vgs=1V and V(x)=0, So the Vgs-Vx=1V. At x=Vds=0.05V, Vgs-Vx=0.95V. Now if we see the induced chagre equation, it is proportional to the effective channel voltage.</br>
 
-<img width="411" height="150" alt="image" src="https://github.com/user-attachments/assets/f303fe6e-388f-4395-9650-e7121cd5aff4" />
 
-<img width="390" height="451" alt="image" src="https://github.com/user-attachments/assets/14f8c404-0d02-4d21-8d67-b20ff1801eae" />
 
 There are two types of currents; Dift and Diffusion current, Here there is Drift current as there is potential difference across the channel.</br>
 
-<img width="1285" height="618" alt="image" src="https://github.com/user-attachments/assets/e1ba1c63-b342-4377-9fe8-1a2e58c93e02" />
 
 To get the drain current, we will see the top view of transistor.</br>
 
-<img width="1311" height="687" alt="image" src="https://github.com/user-attachments/assets/6c473806-a163-4120-974a-73e11da97839" />
 
 ### L3 Drain current model for Linear region of operation
 As there is change of voltage across the channel length, this will result in change of velocity which is a function of mobility and electrci field.</br>
+![WhatsApp Image 2026-02-27 at 10 06 38 PM](https://github.com/user-attachments/assets/23b8c20f-5692-4bdd-94a1-1203f0467384)
 
-<img width="448" height="651" alt="image" src="https://github.com/user-attachments/assets/6518460a-1e4c-481f-8341-d99a1fa9a376" />
 
 We will integrate the above equation, where limits of dV will be from 0 to Vds and limits of dx will be from 0 to L.</br>
 
-<img width="442" height="428" alt="image" src="https://github.com/user-attachments/assets/382f07af-71b5-4f00-894d-bdab05e92d0e" />
-
-<img width="377" height="48" alt="image" src="https://github.com/user-attachments/assets/f6f5158c-850f-4272-b381-0b57dc30e7a9" />
-
 Here, Cox, W/L, Vgs, un and Vt are the 'technology parameters', we will simulate usinf SPICE and find out the characteristics.</br>
-
-<img width="387" height="211" alt="image" src="https://github.com/user-attachments/assets/ee457e12-6af7-4389-a11a-036ba5a4b652" />
-
 But, here we cannot say that it is in Linear region, since the Drain current is the quadratic function of Vds. We will calculate the Id with the given values.</br>
-
-<img width="708" height="432" alt="image" src="https://github.com/user-attachments/assets/853ed5fa-0257-4a73-91dd-09007f16d273" />
-
 When (Vgs-Vt)>=Vds, It is in "Linear region".</br>
-
-<img width="683" height="443" alt="image" src="https://github.com/user-attachments/assets/bdfa5383-5b3b-452f-b437-0768814f2551" />
+![WhatsApp Image 2026-02-27 at 10 07 40 PM](https://github.com/user-attachments/assets/ee4d5894-7db3-4b5b-93b6-a8cd1fc1d8f7)
 
 ### L4 SPICE conclusion to resistive operation
 We need to find the impact of Vgs and Vds on the drain current equation. We will consider different values of Vgs and Vds. If we consider different values of Vgs, under what condition the device will remain in Linear region depends on (Vgs-Vt) should be greater than Vds.</br>
-
-<img width="591" height="172" alt="image" src="https://github.com/user-attachments/assets/d9735c9f-3a26-49aa-bc9b-62e64d65babe" />
-
 Now the main question arises, How do we calculate Id for different values of 'Vgs' and at every value of 'Vgs', sweep Vds till (Vgs-Vt) using linear equation for Id?</br>
 For this we need to do SPICE simulations.</br>
 
