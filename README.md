@@ -978,6 +978,7 @@ Now considering the inverter chain, the variation can differ with different inve
 <img width="1121" height="618" alt="Screenshot 2025-10-03 203404" src="https://github.com/user-attachments/assets/8683fe6c-a634-4720-98d4-8ef619ab52b1" />
 
 The variation is more at the edges or sides than at the center.
+![WhatsApp Image 2026-02-27 at 9 33 55 PM](https://github.com/user-attachments/assets/f6e03946-1a73-4e2a-9ab4-0a5e89e7b698)
 
 <img width="1324" height="621" alt="Screenshot 2025-10-03 203542" src="https://github.com/user-attachments/assets/998d8d7c-941f-4643-a768-13896c578018" />
 
