@@ -1,7 +1,7 @@
 # CMOS-Circuit-Design-Spice-Simulation-using-Sky130nm-technology
 
 ## Table Of Contents
-- [NgspiceSky130-Day1-Basics of NMOS Drain Current(Id) vs Drain-to-source Voltage(Vds)](#NgspiceSky130-Day1-Basics-of-NMOS-Drain-Current(Id)-vs-Drain-to-source-Voltage(Vds))
+- [Day1-Basics of NMOS Drain Current(Id) vs Drain-to-source Voltage(Vds)](#NgspiceSky130-Day1-Basics-of-NMOS-Drain-Current(Id)-vs-Drain-to-source-Voltage(Vds))
   - [Introduction to Circuit Design and Spice Simulations](#Introduction-to-Circuit-Design-and-Spice-Simulations)
     - [L1 Why do we need SPICE simulations?](#L1-Why-do-we-need-SPICE-simulations?)
     - [L2 Introduction to basic element in circuit design-NMOS](#L2-Introduction-to-basic-element-in-circuit-design-NMOS)
@@ -20,7 +20,7 @@
     - [L3 Define Technology parameters](#L3-Define-Technology-parameters)
     - [L4 First SPICE simulation](#L4-First-SPICE-simulation)
     - [L5 SPICE lab with Sky130 models](#L5-SPICE-lab-with-Sky130-models)
-- [NgspiceSky130-Day2-Velocity saturation and basics of CMOS inverter VTC](#NgspiceSky130-Day2-Velocity-saturation-and-basics-of-CMOS-inverter-VTC)
+- [Day2-Velocity saturation and basics of CMOS inverter VTC](#NgspiceSky130-Day2-Velocity-saturation-and-basics-of-CMOS-inverter-VTC)
   - [SPICE simulation for lower nodes and velocity saturation effect](#SPICE-simulation-for-lower-nodes-and-velocity-saturation-effect)
     - [L1 SPICE simulation for lower nodes](#L1-SPICE-simulation-for-lower-nodes)
     - [L2 Drain current vs gate voltage for long and short channel device](#L2-Drain-current-vs-gate-voltage-for-long-and-short-channel-device)
@@ -35,7 +35,7 @@
     - [L4 Step1- Convert PMOS gate-source-voltage to Vin](#L4-Step1--Convert-PMOS-gate-source-voltage-to-Vin)
     - [L5 Step2 & Step3- Convert PMOS and NMOS drain-source-voltage to Vout](#L5-Step2-&-Step3--Convert-PMOS-and-NMOS-drain-source-voltage-to-Vout)
     - [L6 Step4- Merge PMOS-NMOS load curves and plot VTC](#L6-Step4--Merge-PMOS-NMOS-load-curves-and-plot-VTC)
-- [NgspiceSky130-Day3-CMOS switching threshold and dynamic simulations](#NgspiceSky130-Day3-CMOS-switching-threshold-and-dynamic-simulations)
+- [Day3-CMOS switching threshold and dynamic simulations](#NgspiceSky130-Day3-CMOS-switching-threshold-and-dynamic-simulations)
   - [Voltage transfer characteristics-SPICE simulations](#Voltage-transfer-characteristics-SPICE-simulations)
     - [L1 SPICE deck creation for CMOS inverter](#L1-SPICE-deck-creation-for-CMOS-inverter)
     - [L2 SPICE simulation for CMOS inverter](#L2-SPICE-simulation-for-CMOS-inverter)
@@ -47,14 +47,14 @@
     - [L4 Static and Dynamic simulation of CMOS inverter](#L4-Static-and-Dynamic-simulation-of-CMOS-inverter)
     - [L5 Static and Dynamic simulation of CMOS inverter with increased PMOS width](#L5-Static-and-Dynamic-simulation-of-CMOS-inverter-with-increased-PMOS-width)
     - [L6 Applications of CMOS inverter in clock network and STA](#L6-Applications-of-CMOS-inverter-in-clock-network-and-STA)
-- [NgspiceSky130-Day4-CMOS Noise Margin robustness evaluation](#NgspiceSky130-Day4-CMOS-Noise-Margin-robustness-evaluation)
+- [Day4-CMOS Noise Margin robustness evaluation](#NgspiceSky130-Day4-CMOS-Noise-Margin-robustness-evaluation)
   - [Static behaviour evaluation-CMOS inverter robustness-Noise Margin](#Static-behaviour-evaluation-CMOS-inverter-robustness-Noise-Margin)
     - [L1 Introduction to Noise Margin](#L1-Introduction-to-Noise-Margin)
     - [L2 Noise Margin voltage paramters](#L2-Noise-Margin-voltage-paramters)
     - [L3 Noise margin equation and summary](#L3-Noise-margin-equation-and-summary)
     - [L4 Noise margin variation with respect to PMOS width](#L4-Noise-margin-variation-with-respect-to-PMOS-width)
     - [L5 Sky130 Noise margin labs](#L5-Sky130-Noise-margin-labs)
-- [NgspiceSky130-Day5-CMOS power supply and device variation robustness evaluation](#NgspiceSky130-Day5-CMOS-power-supply-and-device-variation-robustness-evaluation)
+- [Day5-CMOS power supply and device variation robustness evaluation](#NgspiceSky130-Day5-CMOS-power-supply-and-device-variation-robustness-evaluation)
   - [Static behaviour evaluation-CMOS inverter robustness-Power supply variation](#Static-behaviour-evaluation-CMOS-inverter-robustness-Power-supply-variation)
     - [L1 Smart SPICE simulations for power supply variations](#L1-Smart-SPICE-simulations-for-power-supply-variations)
     - [L2 Advantages and disadvantages using low supply voltage](#L2-Advantages-and-disadvantages-using-low-supply-voltage)
@@ -66,7 +66,7 @@
     - [L4 Conclusion](#L4-Conclusion)
     - [L5 Sky130 device variations labs](#L5-Sky130-device-variations-labs)
 
-# NgspiceSky130-Day1-Basics of NMOS Drain Current(Id) vs Drain-to-source Voltage(Vds)
+# Day1-Basics of NMOS Drain Current(Id) vs Drain-to-source Voltage(Vds)
 
 ## Introduction to Circuit Design and Spice Simulations
 
@@ -385,7 +385,7 @@ If we go inside `models` folder, we will see `all.spice` file. If we open it we 
 
 We can see that W and L values are in microns.</br>
 
-# NgspiceSky130-Day2-Velocity saturation and basics of CMOS inverter VTC
+# Day2-Velocity saturation and basics of CMOS inverter VTC
 
 ## SPICE simulation for lower nodes and velocity saturation effect
 
@@ -587,7 +587,7 @@ So the  range of Vin and Vout is 0V-2V.</br>
 
 <img width="1332" height="687" alt="image" src="https://github.com/user-attachments/assets/e484815f-7533-4c87-a6c3-ca79158ac59e" />
 
-# NgspiceSky130-Day3-CMOS switching threshold and dynamic simulations
+# Day3-CMOS switching threshold and dynamic simulations
 
 ## Voltage transfer characteristics-SPICE simulations
 
@@ -750,7 +750,7 @@ There are some conclusions we draw from this experiment: </br>
   <img width="1110" height="653" alt="image" src="https://github.com/user-attachments/assets/30d33241-5e2f-4389-9a80-cd8d2ad5baaf" />
 * Other types of cells can be used according to the data path requirement
 
-# NgspiceSky130-Day4-CMOS Noise Margin robustness evaluation
+# Day4-CMOS Noise Margin robustness evaluation
 
 ## Static behaviour evaluation-CMOS inverter robustness-Noise Margin
 
@@ -830,7 +830,7 @@ We will take the point where the slope is -1 ; x axis will give VIL and VIH, whe
 **Noise margin NH = VOH - VIH = 1.70952-0.98778 = 0.72** </br>
 **Noise margin NL = VIL - VOL = 0.7733-0.09523 = 0.67807** </br>
 
-# NgspiceSky130-Day5-CMOS power supply and device variation robustness evaluation
+# Day5-CMOS power supply and device variation robustness evaluation
 
 ## Static behaviour evaluation-CMOS inverter robustness-Power supply variation
 
