@@ -322,28 +322,16 @@ First let us look into the SPICE setup.</br>
 
 ![WhatsApp Image 2026-02-27 at 2 16 43 PM](https://github.com/user-attachments/assets/706d9976-836f-4e25-a1cf-776cd8468d1b)
 
-
-<img width="1412" height="611" alt="image" src="https://github.com/user-attachments/assets/5872cd9a-70d1-46cf-9fe4-f5247f8d3415" />
-
 Some parameters are constant, and directly coming from the foundaries we don't have to derive them. These are circiled in yellow.</br>
-
-<img width="1313" height="591" alt="image" src="https://github.com/user-attachments/assets/c7f8c503-a596-40a7-85e8-b00b1eef4cf9" />
-
-<img width="922" height="536" alt="image" src="https://github.com/user-attachments/assets/260175cb-7abc-4fc6-a332-6b73b7954cae" />
 
 So, when we feed the SPICE model parameters and SPICE netlist intp the SPICE software, we get the device characteristics in terms of Id vs Vds with different values of Vgs.</br>
 
 **SPICE Netlist**
 We need to feed the device into SPICE engine in certain manner, the circuit equivalent of given mosfet is as shown below. </br>
 
-<img width="1262" height="585" alt="image" src="https://github.com/user-attachments/assets/ec870ea4-f7ce-4e99-939a-d6e8646c499e" />
-
 ### L2 Circuit description in SPICE syntax
 Now we will write the syntax for this particular circuit in SPICE netlist. To do that we need to follow some steps-
 * **Define Nodes**
-  
-  <img width="653" height="410" alt="image" src="https://github.com/user-attachments/assets/726a94e6-1333-41dc-a4c0-d9c766b00f9b" />
-
 * **Give names to the node**
 * **Write the code**
   `since modfet has 4 terminals, it is lying between 4 different nodes, similarly resistor is lying between 2 nodes.`
