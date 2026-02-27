@@ -379,7 +379,7 @@ We can see that W and L values are in microns.</br>
 ### L1 SPICE simulation for lower nodes
 We have seen the curve for Id vs Vds, for different values of Vgs.</br>
 
-<img width="1297" height="658" alt="image" src="https://github.com/user-attachments/assets/c10158ab-7588-4862-96a0-19125d4a3e25" />
+<img width="2338" height="2951" alt="image" src="https://github.com/user-attachments/assets/31a97ce9-be18-4d94-ae81-58fb475fe9ce" />
 
 **Graph Regions (Long Channel):**
 
@@ -388,7 +388,6 @@ We have seen the curve for Id vs Vds, for different values of Vgs.</br>
 - Below → Cut-off region</br>
 **Key Point:** If W/L ratio is same, Id should be same in theory. But in practice, it changes due to short-channel effects.</br>
 
-<img width="872" height="442" alt="image" src="https://github.com/user-attachments/assets/09eec98c-92a0-409e-a6c5-5b2a18e8289d" />
 
 ### L2 Drain current vs gate voltage for long and short channel device
 Let us compare the two simulations we did.
