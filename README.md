@@ -529,21 +529,35 @@ The above shows MOSFET as a switch:
 We are trying to get the equivalent circuit of CMOS when Vin is 'high' and 'low', so that we can get the Voltage Transfer Characteristics (VTC) and therefore calculate the delay of the cell.</br>
 ![WhatsApp Image 2026-02-27 at 3 01 39 PM](https://github.com/user-attachments/assets/2e1329b7-1fd1-4142-bd5f-e84bceb4b7e9)
 
-* When we take Vin as 'high' and equal to Vdd, PMOS will be OFF and NMOS will be ON
+* Case 1: Input is High (Vin = Vdd)</br>
+When we apply a high voltage (equal to the power supply, Vdd) to the input, the PMOS transistor turns OFF, and the NMOS transistor turns ON.</br>
 
-* When we take Vin as 'low' or equal to '0', PMOS will be ON and NMOS will be OFF.
+* Case 2: Input is Low (Vin = 0)</br>
+When we apply a low voltage (0V) to the input, the PMOS transistor turns ON, and the NMOS transistor turns OFF.</br>
 
-So we can see that when Vin=Vdd there is a direct path that exists between Vss and Vout, the capacitor CL discharges through the resistor.</br>
-Similarly when Vin=0 there is a direct path between Vdd and Vout, CL charges.</br>
+**From this, we can understand the path the current takes:**</br>
 
-Let us give the naming convention of the CMOS 
+When Vin = Vdd, a direct path is created between the ground (Vss) and the output (Vout). This allows the capacitor (CL) connected to the output to discharge through the NMOS transistor.</br>
 
-ALso the current in both the condition is Idsn(drain to source for NMOS) and Idsp(Drain to source for PMOS)
-And **Idsp = -Idsn**, both are opposite in direction to each other.
+When Vin = 0, a direct path is created between the power supply (Vdd) and the output (Vout). This allows the capacitor (CL) to charge through the PMOS transistor.</br>
+
+**Naming the Currents**</br>
+
+We need to name the currents flowing through the transistors:</br>
+
+The current flowing through the NMOS (from Drain to Source) is called Idsn.</br>
+
+The current flowing through the PMOS (from Drain to Source) is called Idsp.</br>
+
+These two currents are always equal in magnitude but flow in opposite directions. This relationship is written as: **Idsp = -Idsn**.</br>
 
 ### L3 PMOS/NMOS drain current vs drain voltage
 
-Now if we talk about the curve between Idsn Vs Vdsn and Idsp Vs Vdsp, it is as shown below.
+If we were to draw the curves for these currents, we would have:</br>
+
+A graph showing how Idsn changes with Vdsn (the voltage across the NMOS).</br>
+
+A graph showing how Idsp changes with Vdsp (the voltage across the PMOS).</br>
 
 ### L4 Step1- Convert PMOS gate-source-voltage to Vin
 We have seen various internal voltages, but actually in terms of user's perspective we can't see the internal voltages and only see the external Vin and Vout. From these we calculate the VTC and eventually we get to know the delay.</br>
@@ -552,8 +566,8 @@ We have seen various internal voltages, but actually in terms of user's perspect
 *Assumption: Let us assume that it is a long channel device with Vdd=2V*
 * We will fix the Vgs values as shown below
  
-* We know that Vgsp= Vin-Vdd, So we get the above values.So we get Vin = Vgsp+Vdd, we are trying to convert all the voltages as function of Vin and Vout.
-* We will try to plot the graph of PMOS in terms of Idsn, the plot will be as shown below. We can see that the corresponding Vin value of Vgsp is being plotted as shown in the above table.
+* We know that Vgsp= Vin-Vdd, So we get the above values.So we get **Vin = Vgsp+Vdd**, we are trying to convert all the voltages as function of Vin and Vout.
+* We will try to plot the graph of PMOS in terms of Idsn, the plot will be as shown below.
 
   
 ### L5 Step2 & Step3- Convert PMOS and NMOS drain-source-voltage to Vout
@@ -564,6 +578,7 @@ Let us convert Vdsp into Vout. So to get Vout there is a shift of Vdd towards le
 We can see that whenever Vout=2V that means Vdsp=0V and Vdd=2V (given), then The current is zero and capacitor at the output is discharged. This is true only when PMOS is in combination with NMOS and forms a CMOS inverter.</br>
 Let us take another example, when Vout=0V, that means -Vdsp=2V and Vdd=2V, so at every gate voltage of Vin we will see a finite current whenever Vout=0V. As Vout=0V, the capacitor is completely discharged and we need to charge that, so that is the charging current required. So, here we get the load curve for PMOS</br>
 
+![WhatsApp Image 2026-02-27 at 3 26 42 PM](https://github.com/user-attachments/assets/f4d7727c-9650-4cc2-b503-5f78dd314d4c)
 
 Now we will try to get the "load curve" for NMOS transistor from this equations.</br>
 
@@ -575,15 +590,15 @@ We will now merge the above two curves and obtain the voltage transfer character
 
 For this we will superimpose both the Load Curves to get the VTC. We are doing this to find out the common point between Vin and Vout of both NMOS and PMOS.</br>
 
+![WhatsApp Image 2026-02-27 at 3 27 22 PM](https://github.com/user-attachments/assets/9e25efcf-8287-468a-9956-e3d3dc7a53d9)
 
 So the  range of Vin and Vout is 0V-2V.</br>
 
-* When Vin = 0V, Vout = 2V; NMOS is Cut Off and PMOS is in Linear region
-* When Vin = 0.5V, 1.5V<Vout<2V; NMOS is in Saturation region and PMOS is in Linear region.
-* When Vin = 1V, 0.5V<Vout<1.5V; NMOS and PMOS are in Saturation region.
-* When Vin = 1.5V, 0<Vout<0.5V; NMOS is Linear region and PMOS is in Saturation region.
-* When Vin = 2V, Vout = 0V; NMOS is in linear region and PMOS is Cut Off
-
+* When Vin = 0V: The output Vout is 2V. In this state, the NMOS is Cut Off, and the PMOS is in its Linear region.
+* When Vin = 0.5V: The output Vout falls between 1.5V and 2V. Here, the NMOS is in the Saturation region, and the PMOS is still in the Linear region.
+* When Vin = 1V: The output Vout is between 0.5V and 1.5V. In this mid-range, both the NMOS and PMOS are in the Saturation region.
+* When Vin = 1.5V: The output Vout is between 0V and 0.5V. Here, the NMOS enters the Linear region, while the PMOS is in the Saturation region.
+* When Vin = 2V: The output Vout is 0V. In this final state, the NMOS is in the Linear region, and the PMOS is Cut Off.
 
 # Day3-CMOS switching threshold and dynamic simulations
 
