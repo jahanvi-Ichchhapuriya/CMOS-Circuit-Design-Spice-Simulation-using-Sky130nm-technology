@@ -361,45 +361,29 @@ Now, we need to sweep the Vgs and Vds for SPICE simulations.</br>
 * Open Virtual box
 * Type `cd`
 * `git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git`
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/414d1bb8-13a1-4726-92cb-06ea15ed382f" />
-
+ 
   inside the `sky130_fd_pr` directory we will see cells, models and tech files.</br>
 
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/be98370e-7126-4eb4-959d-ce8d40133e9a" />
-
+ 
   Inside the `cells` files we will see `nfet` and `pfet` cells, these cells we will be using.</br>
 
   Inside `nfet` we will see spice libraries at different corners, we will select one such typical corner.</br>
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/99aa0891-e80e-4457-8799-a4972c8a1f39" />
-
-  <img width="1918" height="1072" alt="image" src="https://github.com/user-attachments/assets/e4a24ba3-c6ab-4f42-8398-8bb9265b79d6" />
-
+ 
+  
   We will see all the model paramteres required for the process.</br>
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/25186faa-ca04-43c7-9c2e-e3d99862ef41" />
-
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/baa1c253-f071-4bd2-b701-68fedb5be846" />
-
+  
+ 
   We have different W and L values which pre-described. For simulation we need to take any one value which is present inside the library.</br>
 
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/e980ebe5-c4f7-4b29-99ad-a7a6867db0d4" />
-
+  
   Now go inside `models` --> `lib.spice` file. We will see library files which are present for nfet and pfet. The corner files are present, include Typical, slow-fast and fast-fast corner files.</br>
 
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/22dd75fb-31d6-4196-8fae-f5897bdc9000" />
-  <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/190a2e1b-bf47-4505-9034-47e3424e0087" />
-
+  
 Inside `design` --> open day1 file.</br>
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/e6eabf93-da6c-478a-8ba2-37d440e2b048" />
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/67dcf536-1896-4202-a378-ec81ec3a717b" />
 Above we see Vdd varying from 0 to 1.8 volts with step size of 0.1V and Vgs sweeping from 0 to 1.8V and with step size of 0.2V
 
 Let us do the spice simulations:
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/51cf629c-17ad-4daa-b627-62abf3cc65c7" />
-
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/820c2138-e28f-4c1a-a3a1-d54669e4576a" />
-
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/6142f189-20cb-4bba-8918-ed8b1ec64f83" />
 
 We will get the plot of Id vs Vds at different Vgs values.</br>
 
