@@ -789,17 +789,15 @@ We now examine the CMOS inverter's robustness through the lens of **Noise Margin
 
 For example if we consider an ideal Inverter, for inputs 0/1 it gives output as 1/0. The slope of switch is infinite. </br>
 
-<img width="557" height="451" alt="image" src="https://github.com/user-attachments/assets/2465a4e2-199d-4698-aa7d-58f0b42f0c6f" />
+![WhatsApp Image 2026-02-27 at 9 54 08 PM](https://github.com/user-attachments/assets/d745f9ca-f593-41e2-b17c-992cedc177fb)
 
 But practically the slope won't be infinite, due to presence of resistances and capacitances there will be delay. Therefore we will get a finite slope </br>
 
-<img width="368" height="316" alt="image" src="https://github.com/user-attachments/assets/f8f2f3f3-dc21-45eb-90b7-c9f2fdb8ef94" />
 
 We can observe the following from the VTC curve:</br>
 
 - When the input voltage is between **0 and VIL** (input low voltage), the output stays at **VOH** (output high voltage).</br>
 - When the input voltage is between **VIH** (input high voltage) and **Vdd**, the output stays at **VOL** (output low voltage).</br>
-<img width="405" height="342" alt="image" src="https://github.com/user-attachments/assets/8e3c22bf-b012-4a75-a08d-910511ed2980" />
 
 ### L2 Noise Margin voltage paramters</br>
 **Practical inverter VTC (with non-idealities):**</br>
@@ -818,14 +816,12 @@ Slope ≈ -1 in transition region (output drops as input rises) </br>
 ### L3 Noise margin equation and summary
 Now we will calculate the noise margin equation, for that we will plot the voltages on the same scale.</br>
 
-<img width="733" height="443" alt="image" src="https://github.com/user-attachments/assets/c25a3266-d8f3-4e16-8afa-298756b3a59d" />
 In the above scale: </br>
 * **Noise amrgin High NH** - value between VIH and VOH. </br>
 * **Noise Margin Low NL** - value between VIL and VOL. </br>
 
 So, any value which lies in between noise margins is considered either 1/0 and considered to be tolerable. Apart from this region the value is "Undefined" and the logic level can swing between 'high' and 'low'.
 
-<img width="783" height="423" alt="image" src="https://github.com/user-attachments/assets/80791538-0e36-46a8-9bf1-043e740dd778" />
 
 <img width="822" height="481" alt="image" src="https://github.com/user-attachments/assets/6443e129-644a-4d0d-a4c4-0439ba4165de" />
 
