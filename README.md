@@ -92,7 +92,7 @@ Let us say we have done some Clock Tree Synthesis of the circuit shown below wit
 
 After the SPICE simulation we get a "Delay Table", which includes input slew and output load. The intersection value of Input slew and Output load is considered as Delay. Delay tables for both level 1 and level 2 buffers have been shown. This is calculated by circuit design and simulation</br>
 
-<img width="1410" height="668" alt="image" src="https://github.com/user-attachments/assets/422a8a28-f4e6-469a-97d4-535f02762e3d" />
+<img width="1055" height="261" alt="image" src="https://github.com/user-attachments/assets/8ff27026-f0d6-4c02-99d4-ea3703a00461" />
 
 The source of the above Delay Tables comes from circuit design using SPICE simulations. SPICE simulations involves characterisation of any CMOS logic.</br>
 
