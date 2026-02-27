@@ -428,7 +428,6 @@ So, for lower node we will have 4 regions of operations: **Cut Off, Linear, Satu
 
 Velocity saturation happens for higher gate-source voltages.</br>
 
-<img width="1011" height="470" alt="image" src="https://github.com/user-attachments/assets/bf8911ed-1708-4c95-adc1-f6816f66a689" />
 
 ### L4 Velocity saturation drain current model
 <img width="987" height="473" alt="image" src="https://github.com/user-attachments/assets/cbe1cdbb-8b18-4c19-97c6-be3e4244fb34" />
