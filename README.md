@@ -527,6 +527,7 @@ The above shows MOSFET as a switch:
 
 ### L2 Introduction to standard MOS voltage current parameters
 We are trying to get the equivalent circuit of CMOS when Vin is 'high' and 'low', so that we can get the Voltage Transfer Characteristics (VTC) and therefore calculate the delay of the cell.</br>
+![WhatsApp Image 2026-02-27 at 3 01 39 PM](https://github.com/user-attachments/assets/2e1329b7-1fd1-4142-bd5f-e84bceb4b7e9)
 
 * When we take Vin as 'high' and equal to Vdd, PMOS will be OFF and NMOS will be ON
 <img width="1292" height="680" alt="image" src="https://github.com/user-attachments/assets/f65a1301-44f9-482e-b8dd-7b5cb3d39e47" />
