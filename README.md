@@ -1015,5 +1015,5 @@ The inverter's performance under these conditions will demonstrate its reliabili
 ### L5 Sky130 device variations labs
 We will now do the SPICE simulations for the device variations</br>
 We can see that the width of PMOS is quite large than that of NMOS. SO it is clearly strong PMOS and weak NMOS case. The Vm will be right shifted.</br>
-<img width="1126" height="594" alt="image" src="https://github.com/user-attachments/assets/3bd621fa-c18f-4fe8-aec9-327735420b9a" />
+<img width="1115" height="580" alt="image" src="https://github.com/user-attachments/assets/3bd621fa-c18f-4fe8-aec9-327735420b9a" />
 
