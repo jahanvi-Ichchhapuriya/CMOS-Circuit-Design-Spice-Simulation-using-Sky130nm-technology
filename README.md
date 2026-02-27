@@ -131,8 +131,7 @@ At first we will keep the Vgs=0, means source and drain terminal both are ground
 <img width="499" height="429" alt="image" src="https://github.com/user-attachments/assets/9d3deabe-d57f-4ab8-82ac-be1101c5ff63" />
 
 Now we will apply a positive potential; Vgs>0. We will see gate is now positively charged and due to this there will be Accumulation of negative charges at the surface of substrate.</br>
-
-<img width="1345" height="555" alt="image" src="https://github.com/user-attachments/assets/ef79f61f-5540-4ffb-aec8-06fa9354759a" />
+<img width="713" height="368" alt="image" src="https://github.com/user-attachments/assets/21ae5a87-783c-43ba-b1ed-90eab1c08dc0" />
 
 ### L3 Strong inversion and threshold voltage
 Due to Accumulation of negatuve charges, there will be formation of Depletion Region, depleting of it's majority carriers i.e positive carriers here.</br>
