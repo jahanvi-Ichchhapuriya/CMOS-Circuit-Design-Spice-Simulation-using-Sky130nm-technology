@@ -974,4 +974,5 @@ We can see that the width of PMOS is quite large than that of NMOS. SO it is cle
 
 <img width="1919" height="1079" alt="Screenshot 2025-10-03 231914" src="https://github.com/user-attachments/assets/ef15e759-7036-445a-b5b1-53b0df38050a" />
 
-<img width="1919" height="1079" alt="Screenshot 2025-10-03 232247" src="https://github.com/user-attachments/assets/841f9eea-395a-4213-93c5-8e5a06de59f0" />
+<img width="1126" height="594" alt="image" src="https://github.com/user-attachments/assets/3bd621fa-c18f-4fe8-aec9-327735420b9a" />
+
