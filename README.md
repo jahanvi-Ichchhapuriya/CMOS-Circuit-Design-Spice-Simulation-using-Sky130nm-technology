@@ -159,6 +159,9 @@ Apply +ve Vgs voltage
 * Further, increase "Vgs'
 * No Change in depletion layer width
 * Electrons from heavily doped 'n+' source region are drawn in region under gate 'G'
+
+<img width="492" height="433" alt="image" src="https://github.com/user-attachments/assets/bcd6cba0-7eb7-4d8b-a6a3-aab44d5a526f" />
+
 <img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/f8c47353-dbf7-4026-b4d9-89ebff6cd24d" />
 
 <img width="1350" height="618" alt="image" src="https://github.com/user-attachments/assets/183a52c0-755d-43c6-9731-9043b047e679" />
