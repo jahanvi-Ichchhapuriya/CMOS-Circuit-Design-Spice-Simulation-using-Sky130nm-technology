@@ -970,8 +970,7 @@ We will see the sources of variation of VTC characteristics in a CMOS inverter.<
 First is **Etching Process** </br>
 If we see a single inverter layout, we will see the length of gate, the width(common area between polysilicon and diffusion). Due to etching process there can be a variation in length and width of CMOS.
 ![WhatsApp Image 2026-02-27 at 9 26 54 PM](https://github.com/user-attachments/assets/42d2820f-1050-420d-814b-f63919b53617)
-
-<img width="1208" height="580" alt="Screenshot 2025-10-03 203231" src="https://github.com/user-attachments/assets/f4496266-b2a9-4e21-bb84-54e6519478e4" />
+<img width="1144" height="518" alt="image" src="https://github.com/user-attachments/assets/d4f6117d-80b2-4f5b-9b80-0874e7f5332e" />
 
 Now considering the inverter chain, the variation can differ with different inverter.
 
